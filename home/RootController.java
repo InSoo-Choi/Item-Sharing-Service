@@ -24,25 +24,23 @@ public class RootController implements Initializable {
 	@FXML PasswordField getPW;
 	@FXML TextField getPhoneNum;
 	@FXML TextField getName;
+	@FXML Button UserSignUp;
+	@FXML Button home;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 	}
 
-	@FXML public void moveUser() {
-		Stage newStage = new Stage();
+	@FXML public void moveUser() throws Exception{
+		Stage primaryStage = new Stage();
 		Stage stage = (Stage)user.getScene().getWindow();
-		
-		try {
+
 			Parent second = FXMLLoader.load(getClass().getResource("Login.fxml"));
 			Scene sc = new Scene(second);
-			 newStage.setScene(sc);
-	         newStage.show();
-			stage.hide();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+			 primaryStage.setScene(sc);
+	         primaryStage.show();
+			 stage.close();
 	}
 	
 	@FXML public void moveManager() {
@@ -53,29 +51,29 @@ public class RootController implements Initializable {
 		
 	}
 
-	@FXML public void goBackHome(Stage primaryStage) {
-		primaryStage.show();
-	}
-
 	@FXML public void checkExistID() {
 		
 	}
 
-	@FXML public void goUserSignUp() {
-		Stage newStage = new Stage();
-		Stage stage = (Stage)user.getScene().getWindow();
+	@FXML public void goUserSignUp() throws Exception{
 		
-		try {
-			Parent third = FXMLLoader.load(getClass().getResource("MakeAccount.fxml"));
-			Scene sc = new Scene(third);
-			 newStage.setScene(sc);
-	         newStage.show();
-			stage.hide();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+		Stage primaryStage = new Stage();
+			Parent signUp = FXMLLoader.load(getClass().getResource("UserSignup.fxml"));
+			 primaryStage.setScene(new Scene(signUp));
+	         primaryStage.show();
+	         
+	         Stage stage = (Stage)UserSignUp.getScene().getWindow();
+	         stage.close();
 	}
 
-	@FXML public void goBackHome() {}
+	@FXML public void goHome() throws Exception{
+		Stage primaryStage = new Stage();
+		Parent signUp = FXMLLoader.load(getClass().getResource("first.fxml"));
+		 primaryStage.setScene(new Scene(signUp));
+         primaryStage.show();
+         
+         Stage stage = (Stage)home.getScene().getWindow();
+         stage.close();
+	}
 
 }
