@@ -36,16 +36,24 @@ public class RootController implements Initializable {
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)user.getScene().getWindow();
 
-			Parent second = FXMLLoader.load(getClass().getResource("Login.fxml"));
+			Parent second = FXMLLoader.load(getClass().getResource("login.fxml"));
 			Scene sc = new Scene(second);
 			 primaryStage.setScene(sc);
 	         primaryStage.show();
 			 stage.close();
 	}
 	
-	@FXML public void moveManager() {
-		
+	@FXML public void moveManager() throws Exception{
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)user.getScene().getWindow();
+
+			Parent second = FXMLLoader.load(getClass().getResource("managerLogin.fxml"));
+			Scene sc = new Scene(second);
+			 primaryStage.setScene(sc);
+	         primaryStage.show();
+			 stage.close();
 	}
+
 
 	@FXML public void submitUserSignup() {
 		
@@ -66,6 +74,7 @@ public class RootController implements Initializable {
 	         stage.close();
 	}
 
+
 	@FXML public void goHome() throws Exception{
 		Stage primaryStage = new Stage();
 		Parent signUp = FXMLLoader.load(getClass().getResource("first.fxml"));
@@ -75,5 +84,6 @@ public class RootController implements Initializable {
          Stage stage = (Stage)home.getScene().getWindow();
          stage.close();
 	}
+
 
 }

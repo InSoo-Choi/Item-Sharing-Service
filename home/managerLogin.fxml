@@ -21,11 +21,10 @@
             <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
          </padding>
       </VBox>
-      <Label layoutX="139.0" layoutY="131.0" text="User Login" textFill="WHITE">
+      <Label layoutX="109.0" layoutY="133.0" text="Manager Login" textFill="WHITE">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Button fx:id="UserSignUp" layoutX="263.0" layoutY="433.0" mnemonicParsing="false" onAction="#goUserSignUp" text="Sign Up" />
-   </children>
+      </children>
 </AnchorPane>
