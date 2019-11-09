@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class DBconnect {
 	 public static Connection connect(String db_name) {
-		 	String password = "dreamdev77HSO!";
+		 	String password = "cp20708";
 		 	String url = "jdbc:mysql://localhost/"+db_name;
 
 	        Connection conn = null;
