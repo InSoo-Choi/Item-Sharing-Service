@@ -2,15 +2,17 @@ package database;
 import java.sql.*;
 
 public class DBconnect {
-	 public static Connection connect(String db_name) {
-		 	String password = "cp20708";
-		 	String url = "jdbc:mysql://localhost/"+db_name;
+
+	 public static Connection connect() {
+		 	String usr = "#";
+		 	String password = "#";
+            String url = "jdbc:mysql://59.27.140.107:3306/h5seung?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 
 	        Connection conn = null;
 
 	        try{
 	           Class.forName("com.mysql.jdbc.Driver");
-	            conn = DriverManager.getConnection(url, "root", password);
+	            conn = DriverManager.getConnection(url, "h5seung", password);
 	            System.out.println("연결 성공");
 
 	        }

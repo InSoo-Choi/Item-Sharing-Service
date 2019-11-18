@@ -13,10 +13,10 @@ public class DBMembers {
         String password = "";
         
         try {
-        	conn = DBconnect.connect("Members");
+        	conn = DBconnect.connect();
         	 stmt = conn.createStatement();
         	 
-        	String sql = "SELECT password From basicinfo WHERE id = "+"'"+id+"'";
+        	String sql = "SELECT password From members WHERE id = "+"'"+id+"'";
         	rs = stmt.executeQuery(sql);
         	
         	while(rs.next()) {
@@ -51,9 +51,9 @@ public class DBMembers {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
-			conn = DBconnect.connect("Members");
+			conn = DBconnect.connect();
 			
-			String sql = "INSERT INTO basicinfo VALUES (?,?,?,?)";
+			String sql = "INSERT INTO members VALUES (?,?,?,?)";
 			 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
