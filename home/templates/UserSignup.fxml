@@ -13,19 +13,19 @@
       <Label alignment="CENTER_RIGHT" layoutX="35.0" layoutY="216.0" prefHeight="14.0" prefWidth="52.0" text="ID" textAlignment="RIGHT" />
       <Label alignment="CENTER_RIGHT" layoutX="35.0" layoutY="249.0" prefHeight="14.0" prefWidth="52.0" text="PW" textAlignment="RIGHT" />
       <Label alignment="CENTER_RIGHT" layoutX="35.0" layoutY="280.0" prefHeight="14.0" prefWidth="52.0" text="PW2" textAlignment="RIGHT" />
-      <TextField fx:id="getID" layoutX="105.0" layoutY="212.0" />
-      <PasswordField fx:id="getPW" layoutX="105.0" layoutY="245.0" />
-      <TextField fx:id="getName" layoutX="105.0" layoutY="181.0" />
+      <TextField fx:id="getID" layoutX="105.0" layoutY="212.0" promptText="ID" />
+      <PasswordField fx:id="getPW" layoutX="105.0" layoutY="245.0" promptText="password" />
+      <TextField fx:id="getName" layoutX="105.0" layoutY="181.0" promptText="name" />
       <Label layoutX="156.0" layoutY="80.0" text="Sign-Up">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="149.0" layoutY="455.0" mnemonicParsing="false" onAction="#submitUserSignup" text="제출" />
+      <Button fx:id="submitBtn" layoutX="149.0" layoutY="455.0" mnemonicParsing="false" onAction="#submitUserSignup" text="제출" />
       <Button layoutX="283.0" layoutY="212.0" mnemonicParsing="false" onAction="#checkExistID" text="중복확인" />
       <Button fx:id="home" layoutX="201.0" layoutY="455.0" mnemonicParsing="false" onAction="#goHome" text="홈으로" />
       <Label alignment="CENTER_RIGHT" layoutX="35.0" layoutY="313.0" prefHeight="14.0" prefWidth="52.0" text="PHONE" textAlignment="RIGHT" />
-      <TextField fx:id="getPhoneNum" layoutX="105.0" layoutY="310.0" />
-      <PasswordField fx:id="confirmPW" layoutX="105.0" layoutY="277.0" />
+      <TextField fx:id="getPhoneNum" layoutX="105.0" layoutY="310.0" promptText="010-0000-0000" />
+      <PasswordField fx:id="confirmPW" layoutX="105.0" layoutY="277.0" promptText="confirm password" />
    </children>
 </AnchorPane>

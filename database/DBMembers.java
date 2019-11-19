@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class DBMembers {
 
-	//id를 인자로 받아 pw 불러오기 메소드 테스트 성공
+	//load password
 	public static String members_load(String id) {
 		
 		Connection conn = null;
@@ -44,8 +44,7 @@ public class DBMembers {
 	}
 	
 	
-	
-	// 회원가입 메소드 test성공
+//register
 	public static void members_insert(String id, String password, String name, String phone) {
 		
 		Connection conn = null;
@@ -61,7 +60,7 @@ public class DBMembers {
 			pstmt.setString(3, name);
 			pstmt.setString(4, phone);
 			pstmt.executeUpdate();
-			System.out.println("Success");
+//			System.out.println("Success");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -81,5 +80,44 @@ public class DBMembers {
             }
         }
 		
+	}
+	
+	//ID exist check
+	public static int IDcheck(String id) {
+		Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        
+        int success = -1; // 1:중복 0:중복x
+        
+        try {
+        	conn = DBconnect.connect();
+        	 stmt = conn.createStatement();
+        	 
+        	String sql = "select EXISTS (select * from members where id='"+id+"') as success";
+        	rs = stmt.executeQuery(sql);
+        	
+        	while(rs.next()) {
+        	success = Integer.parseInt(rs.getString(1));
+        	}
+        	
+        } catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		finally{
+            try{
+                if( conn != null && !conn.isClosed()){
+                    conn.close();
+                }
+                if( stmt != null && stmt.isClosed()){
+                    stmt.close();
+                }
+            }
+            catch( SQLException e){
+                e.printStackTrace();
+            }
+        }
+    return success;
 	}
 }
