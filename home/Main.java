@@ -10,8 +10,10 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("templates/First.fxml"));
-		primaryStage.setScene(new Scene(root));
+		Parent root = FXMLLoader.load(getClass().getResource("templates/first.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("statics/first.css").toExternalForm());
+		primaryStage.setScene(scene);
 		primaryStage.setTitle("Item Sharing Service");
 		primaryStage.show();
 	}

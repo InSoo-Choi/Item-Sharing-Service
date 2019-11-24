@@ -17,6 +17,13 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
+import javafx.scene.text.Text;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 public class RootController implements Initializable {
 
@@ -35,7 +42,22 @@ public class RootController implements Initializable {
 	int checkNum = -1;
 	@FXML PasswordField confirmPW;
 	@FXML Button submitBtn;
-
+	@FXML Label title;
+	@FXML VBox vbox;
+	@FXML Label UserLogin;
+	@FXML ImageView firstBackImage;
+	@FXML Pane firstBackColor;
+	@FXML ImageView loginBackImage;
+	@FXML Pane loginBackColor;
+	@FXML ImageView usersignupBackImage;
+	@FXML Pane usersignupBackColor;
+	@FXML ImageView managerloginBackImage;
+	@FXML Pane managerloginBackColor;
+	@FXML TextField inputManagerID;
+	@FXML PasswordField inputManagerPW;
+	@FXML Button home2;
+	@FXML Button checkExistBtn;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -47,6 +69,7 @@ public class RootController implements Initializable {
 
 			Parent second = FXMLLoader.load(getClass().getResource("templates/login.fxml"));
 			Scene sc = new Scene(second);
+			sc.getStylesheets().add(getClass().getResource("statics/login.css").toExternalForm());
 			 primaryStage.setScene(sc);
 	         primaryStage.show();
 			 stage.close();
@@ -58,7 +81,7 @@ public class RootController implements Initializable {
 
 			Parent second = FXMLLoader.load(getClass().getResource("templates/managerLogin.fxml"));
 			Scene sc = new Scene(second);
-			 primaryStage.setScene(sc);
+			primaryStage.setScene(sc);
 	         primaryStage.show();
 			 stage.close();
 	}
@@ -114,6 +137,7 @@ public class RootController implements Initializable {
 		Stage stage = (Stage)submitBtn.getScene().getWindow();
 
 			Parent asd = FXMLLoader.load(getClass().getResource("templates/login.fxml"));
+			asd.getStylesheets().add(getClass().getResource("statics/login.css").toExternalForm());
 			Scene sc = new Scene(asd);
 			 primaryStage.setScene(sc);
 	         primaryStage.show();
@@ -122,7 +146,7 @@ public class RootController implements Initializable {
 	}
 
 	
-	//ID중복확인 
+	//ID중복확인
 	@FXML public void checkExistID() {
 		checkNum = DBMembers.IDcheck(getID.getText());
 		
@@ -142,7 +166,7 @@ public class RootController implements Initializable {
 			noExist.showAndWait();
 			break;
 		default:
-			System.out.println("ID중복확인 DB오류");
+			System.out.println("ID중복확인 DB오류�");
 			break;
 		}	
 	}
@@ -151,6 +175,7 @@ public class RootController implements Initializable {
 		
 		Stage primaryStage = new Stage();
 			Parent signUp = FXMLLoader.load(getClass().getResource("templates/UserSignup.fxml"));
+			signUp.getStylesheets().add(getClass().getResource("statics/UserSignup.css").toExternalForm());
 			 primaryStage.setScene(new Scene(signUp));
 	         primaryStage.show();
 	         
@@ -162,13 +187,12 @@ public class RootController implements Initializable {
 	@FXML public void goHome() throws Exception{
 		Stage primaryStage = new Stage();
 		Parent signUp = FXMLLoader.load(getClass().getResource("templates/first.fxml"));
-		 primaryStage.setScene(new Scene(signUp));
+		signUp.getStylesheets().add(getClass().getResource("statics/first.css").toExternalForm());
+		primaryStage.setScene(new Scene(signUp));
          primaryStage.show();
          
          Stage stage = (Stage)home.getScene().getWindow();
          stage.close();
 	}
-
-	
 
 }
