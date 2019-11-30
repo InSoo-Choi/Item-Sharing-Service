@@ -58,6 +58,11 @@ public class RootController implements Initializable {
 	@FXML Button home2;
 	@FXML Button checkExistBtn;
 	
+	String my_name;
+	String my_id;
+	String my_pw;
+	String my_phone;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
