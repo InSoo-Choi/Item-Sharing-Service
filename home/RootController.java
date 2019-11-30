@@ -58,6 +58,11 @@ public class RootController implements Initializable {
 	@FXML Button home2;
 	@FXML Button checkExistBtn;
 	
+	public String my_name;
+	public String my_id;
+	public String my_pw;
+	public String my_phone;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -95,6 +100,11 @@ public class RootController implements Initializable {
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)loginOK.getScene().getWindow();
+			
+			my_name = getName.getText();
+			my_id = getID.getText();
+			my_pw = getPW.getText();
+			my_phone = getPhoneNum.getText();
 
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/user/templates/UserMain.fxml"));
 				Scene sc = new Scene(UserPage);
@@ -102,8 +112,10 @@ public class RootController implements Initializable {
 		         primaryStage.show();
 				 stage.close();
 		}
-		else {
-			System.out.println("login fail");
+		else {Alert loginFail = new Alert(AlertType.ERROR);
+		loginFail.setHeaderText("Login Fail");
+		loginFail.setContentText("아이디 또는 비밀번호를 다시 확인해주세요.");
+		loginFail.showAndWait();
 		}
 	}
 
