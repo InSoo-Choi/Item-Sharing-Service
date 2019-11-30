@@ -57,11 +57,7 @@ public class RootController implements Initializable {
 	@FXML PasswordField inputManagerPW;
 	@FXML Button home2;
 	@FXML Button checkExistBtn;
-	
-	String my_name;
-	String my_id;
-	String my_pw;
-	String my_phone;
+	@FXML Button managerOK;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -100,11 +96,6 @@ public class RootController implements Initializable {
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)loginOK.getScene().getWindow();
-			
-			my_name = getName.getText();
-			my_id = getID.getText();
-			my_pw = getPW.getText();
-			my_phone = getPhoneNum.getText();
 
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/user/templates/UserMain.fxml"));
 				Scene sc = new Scene(UserPage);
@@ -117,6 +108,29 @@ public class RootController implements Initializable {
 		loginFail.setContentText("아이디 또는 비밀번호를 다시 확인해주세요.");
 		loginFail.showAndWait();
 		}
+	}
+	
+	@FXML public void ManagerLogin(ActionEvent event) throws Exception {
+		
+		String PWfromDB = database.DBManagers.managers_load(inputManagerID.getText());
+		
+		if(PWfromDB.equals(inputManagerPW.getText())) {
+			System.out.println("login success");
+			Stage primaryStage = new Stage();
+			Stage stage = (Stage)managerOK.getScene().getWindow();
+
+				Parent UserPage = FXMLLoader.load(getClass().getResource("/manager/templates/managerMain.fxml"));
+				Scene sc = new Scene(UserPage);
+				 primaryStage.setScene(sc);
+		         primaryStage.show();
+				 stage.close();
+		}
+		else {Alert loginFail = new Alert(AlertType.ERROR);
+		loginFail.setHeaderText("Login Fail");
+		loginFail.setContentText("아이디 또는 비밀번호를 다시 확인해주세요.");
+		loginFail.showAndWait();
+		}
+		
 	}
 
 	
@@ -206,5 +220,7 @@ public class RootController implements Initializable {
          Stage stage = (Stage)home.getScene().getWindow();
          stage.close();
 	}
+
+
 
 }
