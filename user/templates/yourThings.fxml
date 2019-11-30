@@ -29,7 +29,7 @@
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="45.0" prefWidth="279.0" text="Item Sharing Service" HBox.hgrow="ALWAYS" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onDragDetected="#moveUserHome" prefHeight="45.0" prefWidth="279.0" text="Item Sharing Service" HBox.hgrow="ALWAYS" />
                   <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/cart_icon.png" />
