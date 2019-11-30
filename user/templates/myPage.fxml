@@ -109,5 +109,6 @@
             </AnchorPane>
          </children>
       </VBox>
+      <Button layoutX="155.0" layoutY="8.0" mnemonicParsing="false" onAction="#moveUserHome" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: #00000000;" />
    </children>
 </AnchorPane>

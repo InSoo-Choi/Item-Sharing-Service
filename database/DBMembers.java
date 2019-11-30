@@ -120,4 +120,44 @@ public class DBMembers {
         }
     return success;
 	}
+	
+	public static String[] load_myInfo(String id) {
+		String[] results = new String[2];
+		
+		
+		Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+        	conn = DBconnect.connect();
+        	 stmt = conn.createStatement();
+        	 
+        	String sql = "SELECT name,phone From members WHERE id = "+"'"+id+"'";
+        	rs = stmt.executeQuery(sql);
+        	
+        	while(rs.next()) {
+        	results[0] = rs.getString(1);
+        	results[1] = rs.getString(2);
+        	}
+        	
+        } catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		finally{
+            try{
+                if( conn != null && !conn.isClosed()){
+                    conn.close();
+                }
+                if( stmt != null && stmt.isClosed()){
+                    stmt.close();
+                }
+            }
+            catch( SQLException e){
+                e.printStackTrace();
+            }
+        }
+		return results;
+	}
 }
