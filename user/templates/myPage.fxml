@@ -4,9 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -58,40 +55,16 @@
                         <Image url="@../images/search_icon.png" />
                      </image>
                   </ImageView>
-                  <MenuBar layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
-                     <menus>
-                        <Menu mnemonicParsing="false" text="전체">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Close" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="기내용품">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Delete" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="캐리어">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="카메라 장비">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="생필품">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="기타">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                     </menus>
-                  </MenuBar>
+                  <HBox layoutY="54.0" prefHeight="27.0" prefWidth="440.0">
+                     <children>
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="전체" HBox.hgrow="ALWAYS" />
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기내용품" HBox.hgrow="ALWAYS" />
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="캐리어" HBox.hgrow="ALWAYS" />
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="카메라장비" HBox.hgrow="ALWAYS" />
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="생필품" HBox.hgrow="ALWAYS" />
+                        <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기타" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
             <Line endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
