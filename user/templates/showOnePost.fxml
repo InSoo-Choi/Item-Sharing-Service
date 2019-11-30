@@ -136,5 +136,6 @@
             </AnchorPane>
          </children>
       </VBox>
+      <Button fx:id="moveMypage_Btn" layoutX="403.0" layoutY="4.0" mnemonicParsing="false" onAction="#moveMyPage" prefHeight="38.0" prefWidth="34.0" style="-fx-background-color: #00000000;" />
    </children>
 </AnchorPane>
