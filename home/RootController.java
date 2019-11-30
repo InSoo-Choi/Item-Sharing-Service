@@ -110,7 +110,7 @@ public class RootController implements Initializable {
 		}
 		else {Alert loginFail = new Alert(AlertType.ERROR);
 		loginFail.setHeaderText("Login Fail");
-		loginFail.setContentText("아이디 또는 비밀번호를 다시 확인해주세요.");
+		loginFail.setContentText("�븘�씠�뵒 �삉�뒗 鍮꾨�踰덊샇瑜� �떎�떆 �솗�씤�빐二쇱꽭�슂.");
 		loginFail.showAndWait();
 		}
 	}
@@ -124,6 +124,7 @@ public class RootController implements Initializable {
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)managerOK.getScene().getWindow();
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/manager/templates/managerMain.fxml"));
+				UserPage.getStylesheets().add(getClass().getResource("statics/managerMain.css").toExternalForm());
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();
@@ -131,32 +132,32 @@ public class RootController implements Initializable {
 		}
 		else {Alert loginFail = new Alert(AlertType.ERROR);
 		loginFail.setHeaderText("Login Fail");
-		loginFail.setContentText("아이디 또는 비밀번호를 다시 확인해주세요.");
+		loginFail.setContentText("�븘�씠�뵒 �삉�뒗 鍮꾨�踰덊샇瑜� �떎�떆 �솗�씤�빐二쇱꽭�슂.");
 		loginFail.showAndWait();
 		}
 		
 	}
 
 	
-	//회원가입
+	//�쉶�썝媛��엯
 	@FXML public void submitUserSignup(ActionEvent event) throws Exception {
 		if(getID.getText().equals("") || getPW.getText().equals("") || getName.getText().equals("") || getPhoneNum.getText().equals("")) {
 			Alert emptyError = new Alert(AlertType.ERROR);
 			
 			emptyError.setHeaderText("Empty Error");
-			emptyError.setContentText("빈 칸을 채워주세요");
+			emptyError.setContentText("鍮� 移몄쓣 梨꾩썙二쇱꽭�슂");
 			emptyError.showAndWait();
 		}
 		else if(checkNum != 0) {
 			Alert noCheckID = new Alert(AlertType.ERROR);
 			noCheckID.setHeaderText("ID Check Error");
-			noCheckID.setContentText("아이디 중복확인을 해주십시요.");
+			noCheckID.setContentText("�븘�씠�뵒 以묐났�솗�씤�쓣 �빐二쇱떗�떆�슂.");
 			noCheckID.showAndWait();
 		}
 		else if(!getPW.getText().equals(confirmPW.getText())) {
 			Alert noCheckID = new Alert(AlertType.ERROR);
 			noCheckID.setHeaderText("Check Password error");
-			noCheckID.setContentText("재확인 비밀번호를 다시 입력해주세요.");
+			noCheckID.setContentText("�옱�솗�씤 鍮꾨�踰덊샇瑜� �떎�떆 �엯�젰�빐二쇱꽭�슂.");
 			noCheckID.showAndWait();
 		}
 		
@@ -176,27 +177,27 @@ public class RootController implements Initializable {
 	}
 
 	
-	//ID중복확인
+	//ID以묐났�솗�씤
 	@FXML public void checkExistID() {
 		checkNum = DBMembers.IDcheck(getID.getText());
 		
 		switch(checkNum) {
 		case 0:
 			Alert exist = new Alert(AlertType.INFORMATION);
-			exist.setTitle("ID 중복 확인");
-			exist.setHeaderText("존재하지 않는 아이디 입니다.");
-			exist.setContentText("양식 작성을 계속 진행하여 주십시요.");
+			exist.setTitle("ID 以묐났 �솗�씤");
+			exist.setHeaderText("議댁옱�븯吏� �븡�뒗 �븘�씠�뵒 �엯�땲�떎.");
+			exist.setContentText("�뼇�떇 �옉�꽦�쓣 怨꾩냽 吏꾪뻾�븯�뿬 二쇱떗�떆�슂.");
 			exist.showAndWait();
 			break;
 		case 1:
 			Alert noExist = new Alert(AlertType.WARNING);
-			noExist.setTitle("ID 중복 확인");
-			noExist.setHeaderText("존재하는 아이디 입니다.");
-			noExist.setContentText("다시 작성하여 주세요.");
+			noExist.setTitle("ID 以묐났 �솗�씤");
+			noExist.setHeaderText("議댁옱�븯�뒗 �븘�씠�뵒 �엯�땲�떎.");
+			noExist.setContentText("�떎�떆 �옉�꽦�븯�뿬 二쇱꽭�슂.");
 			noExist.showAndWait();
 			break;
 		default:
-			System.out.println("ID중복확인 DB오류�");
+			System.out.println("ID以묐났�솗�씤 DB�삤瑜섓옙");
 			break;
 		}	
 	}
