@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.MyPageController">
    <children>
       <VBox prefHeight="660.0" prefWidth="440.0">
          <children>
@@ -77,12 +77,12 @@
                         <Image url="@../images/user_icon.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="87.0" layoutY="117.0" text="김땡땡" />
+                  <Label fx:id="mypage_name" layoutX="87.0" layoutY="117.0" />
                   <Label layoutX="132.0" layoutY="117.0" text="고객님" />
                   <Label layoutX="231.0" layoutY="65.0" text="아이디" />
-                  <Label layoutX="293.0" layoutY="65.0" text="idoutput" />
+                  <Label fx:id="mypage_id" layoutX="293.0" layoutY="65.0" />
                   <Label layoutX="231.0" layoutY="85.0" text="연락처" />
-                  <Label layoutX="293.0" layoutY="85.0" text="010-0000-0000" />
+                  <Label fx:id="mypage_phone" layoutX="293.0" layoutY="85.0" />
                   <HBox alignment="CENTER" layoutX="-1.0" layoutY="172.0" prefHeight="27.0" prefWidth="442.0">
                      <children>
                         <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="등록한 물품" HBox.hgrow="ALWAYS">
