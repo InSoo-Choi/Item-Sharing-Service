@@ -108,7 +108,7 @@ public class RootController implements Initializable {
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)loginOK.getScene().getWindow();
 			
-				Parent UserPage = FXMLLoader.load(getClass().getResource("/user/templates/UserMain.fxml"));
+				Parent UserPage = FXMLLoader.load(getClass().getResource("/user/templates/userMain.fxml"));
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();
