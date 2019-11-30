@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.MyPageController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.MyPageController">
    <children>
       <VBox prefHeight="660.0" prefWidth="440.0">
          <children>
@@ -109,6 +109,6 @@
             </AnchorPane>
          </children>
       </VBox>
-      <Button layoutX="155.0" layoutY="8.0" mnemonicParsing="false" onAction="#moveUserHome" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: #00000000;" />
+      <Button layoutX="155.0" layoutY="8.0" mnemonicParsing="false" onAction="#mypagemoveUserHome" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: #00000000;" />
    </children>
 </AnchorPane>

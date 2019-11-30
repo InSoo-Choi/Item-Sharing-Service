@@ -30,3 +30,10 @@ Button {
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
 }
+#toHome {
+	-fx-background-color: white;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: transparent;
+	-fx-font-weight: bold;
+}

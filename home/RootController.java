@@ -1,6 +1,7 @@
 package home;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -58,6 +59,8 @@ public class RootController implements Initializable {
 	@FXML Button home2;
 	@FXML Button checkExistBtn;
 	@FXML Button managerOK;
+	@FXML Label ManagerLogin;
+	@FXML Label UserSignupLabel;
 	
 
 	@Override
@@ -83,6 +86,7 @@ public class RootController implements Initializable {
 		Stage stage = (Stage)user.getScene().getWindow();
 
 			Parent second = FXMLLoader.load(getClass().getResource("templates/managerLogin.fxml"));
+			second.getStylesheets().add(getClass().getResource("statics/managerLogin.css").toExternalForm());
 			Scene sc = new Scene(second);
 			primaryStage.setScene(sc);
 	         primaryStage.show();
@@ -137,7 +141,7 @@ public class RootController implements Initializable {
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)managerOK.getScene().getWindow();
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/manager/templates/managerMain.fxml"));
-				UserPage.getStylesheets().add(getClass().getResource("statics/managerMain.css").toExternalForm());
+				//UserPage.getStylesheets().add(getClass().getResource("statics/managerMain.css").toExternalForm());
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();
@@ -239,5 +243,45 @@ public class RootController implements Initializable {
          Stage stage = (Stage)home.getScene().getWindow();
          stage.close();
 	}
+
+
+	@FXML public void toHome() throws Exception {
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)UserLogin.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/first.fxml"));
+			ob.getStylesheets().add(getClass().getResource("statics/first.css").toExternalForm());
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
+	}
+
+
+	@FXML public void toHome2() throws Exception {
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)ManagerLogin.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/first.fxml"));
+			ob.getStylesheets().add(getClass().getResource("statics/first.css").toExternalForm());
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
+	}
+
+
+	@FXML public void toHome3() throws Exception {
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)UserSignupLabel.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/first.fxml"));
+			ob.getStylesheets().add(getClass().getResource("statics/first.css").toExternalForm());
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
+	}
+
 
 }
