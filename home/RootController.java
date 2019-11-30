@@ -96,7 +96,13 @@ public class RootController implements Initializable {
 
 		MyInfo.setID(inputID.getText());
 		
-		if(PWfromDB.equals(inputPW.getText())) {
+		if(inputPW.getText().equals("")) {
+			Alert loginFail = new Alert(AlertType.ERROR);
+			loginFail.setHeaderText("Empty error");
+			loginFail.setContentText("아이디 또는 비밀번호를 입력해주세요");
+			loginFail.showAndWait();
+		}
+		else if(PWfromDB.equals(inputPW.getText())) {
 				
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
@@ -108,7 +114,8 @@ public class RootController implements Initializable {
 		         primaryStage.show();
 				 stage.close();
 		}
-		else {Alert loginFail = new Alert(AlertType.ERROR);
+		else {
+		Alert loginFail = new Alert(AlertType.ERROR);
 		loginFail.setHeaderText("Login Fail");
 		loginFail.setContentText("아이디 또는 비밀번호를 다시 확인해주세요.");
 		loginFail.showAndWait();
@@ -119,7 +126,13 @@ public class RootController implements Initializable {
 		
 		String PWfromDB = database.DBManagers.managers_load(inputManagerID.getText());
 		
-		if(PWfromDB.equals(inputManagerPW.getText())) {
+		if(inputManagerPW.getText().equals("")) {
+			Alert loginFail = new Alert(AlertType.ERROR);
+			loginFail.setHeaderText("Login Fail");
+			loginFail.setContentText("아이디 또는 비밀번호를 입력해주세요.");
+			loginFail.showAndWait();
+		}
+		else if(PWfromDB.equals(inputManagerPW.getText())) {
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)managerOK.getScene().getWindow();
@@ -129,7 +142,8 @@ public class RootController implements Initializable {
 		         primaryStage.show();
 				 stage.close();
 		}
-		else {Alert loginFail = new Alert(AlertType.ERROR);
+		else {
+		Alert loginFail = new Alert(AlertType.ERROR);
 		loginFail.setHeaderText("Login Fail");
 		loginFail.setContentText("아이디 또는 비밀번호를 다시 확인해주세요.");
 		loginFail.showAndWait();

@@ -80,7 +80,7 @@
                         <Label maxHeight="1.7976931348623157E308" text="0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <Button layoutX="372.0" layoutY="91.0" mnemonicParsing="false" text="글쓰기" />
+                  <Button layoutX="372.0" layoutY="91.0" mnemonicParsing="false" onAction="#moveAdd" text="글쓰기" />
                </children>
             </AnchorPane>
             <TableView prefHeight="478.0" prefWidth="440.0">
@@ -93,6 +93,6 @@
             </TableView>
          </children>
       </VBox>
-      <Button layoutX="404.0" layoutY="8.0" mnemonicParsing="false"  fx:id="moveMypage_Btn" onAction="#moveMyPage" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #00000000;" />
+      <Button fx:id="moveMypage_Btn" layoutX="404.0" layoutY="8.0" mnemonicParsing="false" onAction="#moveMyPage" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #00000000;" />
    </children>
 </AnchorPane>
