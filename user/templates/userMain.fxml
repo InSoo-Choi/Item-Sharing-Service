@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserMainController">
    <children>
       <VBox prefHeight="660.0" prefWidth="440.0">
          <children>
@@ -93,5 +93,6 @@
             </TableView>
          </children>
       </VBox>
+      <Button layoutX="404.0" layoutY="8.0" mnemonicParsing="false"  fx:id="moveMypage_Btn" onAction="#moveMyPage" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #00000000;" />
    </children>
 </AnchorPane>

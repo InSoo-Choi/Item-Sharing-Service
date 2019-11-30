@@ -59,11 +59,13 @@ public class RootController implements Initializable {
 	@FXML Button checkExistBtn;
 	@FXML Button managerOK;
 	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 	}
 
+	
 	@FXML public void moveUser() throws Exception{
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)user.getScene().getWindow();
@@ -91,12 +93,15 @@ public class RootController implements Initializable {
 	@FXML public void UserLogin(ActionEvent event) throws Exception {
 		
 		String PWfromDB = database.DBMembers.members_load(inputID.getText());
+
+		MyInfo.setID(inputID.getText());
 		
 		if(PWfromDB.equals(inputPW.getText())) {
+				
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)loginOK.getScene().getWindow();
-
+			
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/user/templates/UserMain.fxml"));
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
@@ -118,7 +123,6 @@ public class RootController implements Initializable {
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)managerOK.getScene().getWindow();
-
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/manager/templates/managerMain.fxml"));
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
@@ -220,7 +224,5 @@ public class RootController implements Initializable {
          Stage stage = (Stage)home.getScene().getWindow();
          stage.close();
 	}
-
-
 
 }
