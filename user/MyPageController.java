@@ -21,7 +21,7 @@ public class MyPageController implements Initializable {
 	@FXML Label mypage_id;
 	@FXML Label mypage_phone;
 	
-	String[] mypage_info = DBMembers.load_myInfo(my_id);
+	static String[] mypage_info = DBMembers.load_myInfo(my_id);
 
 	
 	void init() {
