@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="660.0" prefWidth="440.0">
          <children>
@@ -86,7 +85,7 @@
                   <Line endX="313.3999938964844" endY="-0.40000152587890625" layoutX="115.0" layoutY="53.0" startX="-100.0" stroke="#b7b7b7" />
                   <Line endX="47.899993896484375" endY="-61.39997100830078" layoutX="301.0" layoutY="102.0" startX="47.899993896484375" startY="-79.79999542236328" />
                   <Label layoutX="355.0" layoutY="25.0" prefHeight="14.0" prefWidth="71.0" text="카테고리" />
-                  <Label layoutX="22.0" layoutY="12.0" prefHeight="38.0" prefWidth="320.0" text="목베개 대여합니다~!" />
+                  <Label layoutX="43.0" layoutY="13.0" prefHeight="38.0" prefWidth="283.0" text="목베개 대여합니다~!" />
                   <Label layoutX="22.0" layoutY="61.0" prefHeight="14.0" prefWidth="122.0" text="writerID" />
                   <HBox layoutX="224.0" layoutY="63.0" prefHeight="61.0" prefWidth="188.0">
                      <children>
@@ -132,6 +131,7 @@
                   </HBox>
                   <TextArea layoutX="14.0" layoutY="137.0" prefHeight="264.0" prefWidth="415.0" />
                   <Button layoutX="192.0" layoutY="419.0" mnemonicParsing="false" text="이전으로" />
+                  <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" text="♥" />
                </children>
             </AnchorPane>
          </children>
