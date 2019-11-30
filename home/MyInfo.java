@@ -17,4 +17,16 @@ public class MyInfo {
 	public static void setPhone(String phones) {
 		my_phone = phones;
 	}
+	
+	public String getName() {
+		return my_name;
+	}
+	
+	public String getId() {
+		return my_id;
+	}
+	
+	public String getPhone() {
+		return my_phone;
+	}
 }
