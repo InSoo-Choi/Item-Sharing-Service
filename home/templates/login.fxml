@@ -21,7 +21,15 @@
             <Image url="@../images/background1.jpg" />
          </image>
       </ImageView>
-      <Pane fx:id="loginBackColor" prefHeight="600.0" prefWidth="400.0" />
+      <Pane fx:id="loginBackColor" prefHeight="600.0" prefWidth="400.0">
+         <children>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="21.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/home_icon.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="21.0" layoutY="28.0" mnemonicParsing="false" onAction="#toHome" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #00000000;" />
+         </children></Pane>
       <HBox alignment="CENTER" layoutY="111.0" prefHeight="42.0" prefWidth="400.0">
          <children>
             <Label fx:id="UserLogin" alignment="CENTER" maxWidth="1.7976931348623157E308" text="User Login" textFill="WHITE" HBox.hgrow="ALWAYS">
@@ -31,12 +39,13 @@
             </Label>
          </children>
       </HBox>
-      <VBox fx:id="vbox" alignment="CENTER" layoutX="75.0" layoutY="211.0" prefHeight="282.0" prefWidth="250.0" spacing="15.0" style="-fx-background-radius: 5px;">
+      <VBox fx:id="vbox" alignment="CENTER" layoutX="75.0" layoutY="211.0" prefHeight="284.0" prefWidth="250.0" spacing="15.0" style="-fx-background-radius: 5px;">
          <children>
             <TextField fx:id="inputID" prefHeight="20.0" prefWidth="190.0" promptText="ID" style="-fx-border-radius: 3px; -fx-background-color: transparent;">
                <cursor>
                   <Cursor fx:constant="NONE" />
-               </cursor></TextField>
+               </cursor>
+            </TextField>
             <PasswordField fx:id="inputPW" prefHeight="20.0" prefWidth="190.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-radius: 3px;" />
             <Button fx:id="loginOK" mnemonicParsing="false" onAction="#UserLogin" prefWidth="150.0" text="Sign in" textFill="WHITE" />
             <Button fx:id="UserSignUp" mnemonicParsing="false" onAction="#goUserSignUp" prefWidth="150.0" text="Sign Up" />
