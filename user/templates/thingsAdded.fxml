@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +17,7 @@
 
 <AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="660.0" prefWidth="440.0">
+      <VBox prefHeight="351.0" prefWidth="441.0">
          <children>
             <HBox prefHeight="34.0" prefWidth="440.0">
                <children>
@@ -97,43 +97,16 @@
             <Line endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="440.0" text="My Page" />
             <Line endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
-            <AnchorPane prefHeight="234.0" prefWidth="442.0">
-               <children>
-                  <ImageView fitHeight="69.0" fitWidth="73.0" layoutX="93.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/user_icon.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="87.0" layoutY="117.0" text="김땡땡" />
-                  <Label layoutX="132.0" layoutY="117.0" text="고객님" />
-                  <Label layoutX="231.0" layoutY="65.0" text="아이디" />
-                  <Label layoutX="293.0" layoutY="65.0" text="idoutput" />
-                  <Label layoutX="231.0" layoutY="85.0" text="연락처" />
-                  <Label layoutX="293.0" layoutY="85.0" text="010-0000-0000" />
-                  <HBox alignment="CENTER" layoutX="-1.0" layoutY="172.0" prefHeight="27.0" prefWidth="442.0">
-                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="등록한 물품" HBox.hgrow="ALWAYS">
-                           <HBox.margin>
-                              <Insets left="70.0" right="30.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="대여한 물품" HBox.hgrow="ALWAYS">
-                           <HBox.margin>
-                              <Insets left="30.0" right="70.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
-            <Line endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="440.0" text="NOTIFICATION" />
-            <Line endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <ListView layoutY="11.0" prefHeight="176.0" prefWidth="442.0" />
-               </children>
-            </AnchorPane>
+            <TableView prefHeight="126.0" prefWidth="431.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="물품종류" />
+                <TableColumn prefWidth="75.0" text="제목" />
+                  <TableColumn prefWidth="75.0" text="대여여부" />
+                  <TableColumn prefWidth="75.0" text="대여기간" />
+                  <TableColumn prefWidth="75.0" text="최대대여가능일" />
+                  <TableColumn prefWidth="63.20001220703125" text="♥" />
+              </columns>
+            </TableView>
          </children>
       </VBox>
    </children>
