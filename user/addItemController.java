@@ -17,8 +17,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextArea;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ComboBox;
@@ -38,19 +40,7 @@ public class addItemController implements Initializable {
 		kinds.setItems(kindsList);
 	}
 
-
-	@FXML public void moveUserHome() throws Exception {
-		Stage primaryStage = new Stage();
-		Stage stage = (Stage)post_title.getScene().getWindow();
-
-			Parent ob = FXMLLoader.load(getClass().getResource("templates/userMain.fxml"));
-			Scene sc = new Scene(ob);
-			primaryStage.setScene(sc);
-	        primaryStage.show();
-			stage.close();
-	}
-
-	@FXML public void postSubmit(ActionEvent event) {
+	@FXML public void postSubmit(ActionEvent event) throws Exception {
 		
 		LocalDate localDate = limit_date.getValue();
 		
@@ -60,7 +50,41 @@ public class addItemController implements Initializable {
 		String perDayPrice = price.getText();
 		String content = contents.getText();
 		String postByID = home.MyInfo.my_id;
-		DBItems.add(name, kind, postByID, content, perDayPrice, date);
 		
+		if(name == null || kind == null || date == null || perDayPrice == null || content == null) {
+			Alert emptyError = new Alert(AlertType.ERROR);
+			emptyError.setHeaderText("Empty error");
+			emptyError.setContentText("작성되지않은 항목이 있습니다. 다시 확인해주세요.");
+			emptyError.showAndWait();
+		}
+		else {
+			DBItems.add(name, kind, postByID, content, perDayPrice, date);
+			
+			Alert addNotification = new Alert(AlertType.CONFIRMATION);
+			addNotification.setHeaderText("Success");
+			addNotification.setContentText("게시글 등록이 완료되었습니다.");
+			addNotification.showAndWait();
+			
+			Stage primaryStage = new Stage();
+			Stage stage = (Stage)post_title.getScene().getWindow();
+
+				Parent ob = FXMLLoader.load(getClass().getResource("templates/userMain.fxml"));
+				Scene sc = new Scene(ob);
+				primaryStage.setScene(sc);
+		        primaryStage.show();
+				stage.close();
+		}
+	}
+
+	@FXML public void moveUserHome() throws Exception {
+		
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)post_title.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/userMain.fxml"));
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
 	}
 }

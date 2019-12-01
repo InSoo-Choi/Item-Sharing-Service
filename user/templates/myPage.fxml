@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.MyPageController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.MyPageController">
    <children>
       <VBox prefHeight="660.0" prefWidth="440.0">
          <children>
@@ -85,12 +85,12 @@
                   <Label fx:id="mypage_phone" layoutX="293.0" layoutY="85.0" />
                   <HBox alignment="CENTER" layoutX="-1.0" layoutY="172.0" prefHeight="27.0" prefWidth="442.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="등록한 물품" HBox.hgrow="ALWAYS">
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#moveMyThings" text="등록한 물품" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="70.0" right="30.0" />
                            </HBox.margin>
                         </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="대여한 물품" HBox.hgrow="ALWAYS">
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#moveYourThings" text="대여한 물품" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="30.0" right="70.0" />
                            </HBox.margin>
@@ -109,6 +109,6 @@
             </AnchorPane>
          </children>
       </VBox>
-      <Button layoutX="155.0" layoutY="8.0" mnemonicParsing="false" onAction="#mypagemoveUserHome" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: #00000000;" />
+      <Button layoutX="155.0" layoutY="8.0" mnemonicParsing="false" onAction="#moveUserHome" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: #00000000;" />
    </children>
 </AnchorPane>

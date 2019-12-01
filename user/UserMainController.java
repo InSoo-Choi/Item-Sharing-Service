@@ -44,14 +44,21 @@ public class UserMainController implements Initializable {
 	        primaryStage.show();
 			stage.close();
 	}
-
 	
-	@FXML public void postSubmit() {}
+	@FXML public void moveLike() throws Exception {
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)moveMypage_Btn.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/like.fxml"));
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources){
 
 	}
-
 
 }

@@ -14,6 +14,7 @@ import static home.MyInfo.*;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 
 public class MyPageController implements Initializable {
 
@@ -46,6 +47,37 @@ public class MyPageController implements Initializable {
 	        primaryStage.show();
 			stage.close();
 	}
+
+	@FXML public void moveMyThings() throws Exception {
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)mypage_id.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/myThings.fxml"));
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
+	}
+
+	@FXML public void moveYourThings() throws Exception {
+		
+		Stage primaryStage = new Stage();
+		Stage stage = (Stage)mypage_id.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/yourThings.fxml"));
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
+	}
+
+	@FXML public void myThingsmoveUserHome() {}
+
+	@FXML public void yourThingsmoveMyPage() {}
+
+	@FXML public void yourThingsmoveUserHome() {}
+
+	@FXML public void myThingsmoveMyPage() {}
 	
 	
 }

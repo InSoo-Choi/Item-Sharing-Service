@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DBItems {
+	
 	public static void add(String name, String kind, String postByID, String content, String price, String limit_date) {
 		
 		Connection conn = null;
@@ -53,6 +54,10 @@ public class DBItems {
                 e.printStackTrace();
             }
         }
+		
+	}
+	
+	public static void loadItems() {
 		
 	}
 }
