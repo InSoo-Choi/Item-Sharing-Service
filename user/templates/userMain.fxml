@@ -83,12 +83,12 @@
                   <Button layoutX="372.0" layoutY="91.0" mnemonicParsing="false" onAction="#moveAdd" text="글쓰기" />
                </children>
             </AnchorPane>
-            <TableView prefHeight="478.0" prefWidth="440.0">
+            <TableView fx:id="itemListTable" prefHeight="478.0" prefWidth="440.0">
               <columns>
-                  <TableColumn prefWidth="35.20001220703125" text="순번" />
-                <TableColumn prefWidth="231.199951171875" text="제목" />
-                <TableColumn prefWidth="70.40008544921875" text="작성자" />
-                  <TableColumn prefWidth="100.00006103515625" text="최대대여가능일" />
+                  <TableColumn fx:id="numCol" prefWidth="35.20001220703125" text="순번" />
+                <TableColumn fx:id="nameCol" prefWidth="231.199951171875" text="제목" />
+                <TableColumn fx:id="idCol" prefWidth="70.40008544921875" text="작성자" />
+                  <TableColumn fx:id="limitCol" prefWidth="100.00006103515625" text="최대대여가능일" />
               </columns>
             </TableView>
          </children>
