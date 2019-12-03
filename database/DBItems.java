@@ -83,7 +83,6 @@ public class DBItems {
                     //Iterate Column
                     row.add(rs.getString(i));
                 }
-                System.out.println("Row [1] added "+row );
                 ItemList.add(row);
         	}
         	

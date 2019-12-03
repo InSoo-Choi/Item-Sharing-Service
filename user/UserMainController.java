@@ -7,6 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ComboBox;
@@ -99,6 +101,32 @@ public class UserMainController implements Initializable {
             }                    
         });
 
+		
+		itemListTable.setOnMousePressed(new EventHandler<MouseEvent>() {
+		    @Override 
+		    public void handle(MouseEvent event) {
+		        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+		            System.out.println(itemListTable.getSelectionModel().getSelectedItem());
+		            
+		            try {
+						moveShowOne();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+		        }
+		    }
+		});
 	}
+	
+	public void moveShowOne() throws Exception {
+        Stage primaryStage = new Stage();
+		Stage stage = (Stage)moveMypage_Btn.getScene().getWindow();
+		Parent ob = FXMLLoader.load(getClass().getResource("templates/showOnePost.fxml"));
+		Scene sc = new Scene(ob);
+		primaryStage.setScene(sc);
+        primaryStage.show();
+		stage.close();
+	}
+
 
 }
