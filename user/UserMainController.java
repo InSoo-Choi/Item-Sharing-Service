@@ -100,14 +100,12 @@ public class UserMainController implements Initializable {
                 return new SimpleStringProperty(param.getValue().get(4).toString());                        
             }                    
         });
-
+		
 		
 		itemListTable.setOnMousePressed(new EventHandler<MouseEvent>() {
 		    @Override 
 		    public void handle(MouseEvent event) {
 		        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
-		            System.out.println(itemListTable.getSelectionModel().getSelectedItem());
-		            
 		            try {
 						moveShowOne();
 					} catch (Exception e) {
@@ -119,6 +117,7 @@ public class UserMainController implements Initializable {
 	}
 	
 	public void moveShowOne() throws Exception {
+		
         Stage primaryStage = new Stage();
 		Stage stage = (Stage)moveMypage_Btn.getScene().getWindow();
 		Parent ob = FXMLLoader.load(getClass().getResource("templates/showOnePost.fxml"));

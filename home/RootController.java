@@ -1,9 +1,17 @@
 package home;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import database.DBMembers;
 import javafx.fxml.Initializable;
@@ -62,12 +70,24 @@ public class RootController implements Initializable {
 	@FXML Label ManagerLogin;
 	@FXML Label UserSignupLabel;
 	
+	Socket socket;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		final String SERVER_IP = "192.168.1.191";
+		final int SERVER_PORT = 8080;
+		
+        socket = new Socket();
+        
+        try {
+            socket.connect( new InetSocketAddress(SERVER_IP, SERVER_PORT) );
+            System.out.println("서버접속성공");
+       }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
 	}
-
 	
 	@FXML public void moveUser() throws Exception{
 		Stage primaryStage = new Stage();
@@ -95,8 +115,6 @@ public class RootController implements Initializable {
 	
 	
 	@FXML public void UserLogin(ActionEvent event) throws Exception {
-		
-		String PWfromDB = database.DBMembers.members_load(inputID.getText());
 
 		MyInfo.setID(inputID.getText());
 		
@@ -106,7 +124,24 @@ public class RootController implements Initializable {
 			loginFail.setContentText("아이디 또는 비밀번호를 입력해주세요");
 			loginFail.showAndWait();
 		}
-		else if(PWfromDB.equals(inputPW.getText())) {
+		
+		String passwordDB = null;
+        try {
+           String m = "LogIn:" + inputID.getText();
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+          passwordDB = br.readLine();
+          
+          
+        } catch (IOException e1) {
+           e1.printStackTrace();
+        }
+        
+		if(passwordDB.equals(inputPW.getText())) {
 				
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
@@ -121,7 +156,7 @@ public class RootController implements Initializable {
 		else {
 		Alert loginFail = new Alert(AlertType.ERROR);
 		loginFail.setHeaderText("Login Fail");
-		loginFail.setContentText("�븘�씠�뵒 �삉�뒗 鍮꾨�踰덊샇瑜� �떎�떆 �솗�씤�빐二쇱꽭�슂.");
+		loginFail.setContentText("로그인 실패");
 		loginFail.showAndWait();
 		}
 	}
@@ -180,7 +215,12 @@ public class RootController implements Initializable {
 		}
 		
 		else {
-		database.DBMembers.members_insert(getID.getText(), getPW.getText(), getName.getText(), getPhoneNum.getText());
+//		database.DBMembers.members_insert(getID.getText(), getPW.getText(), getName.getText(), getPhoneNum.getText());
+		String m = "Register:" + getID.getText()+":"+getPW.getText()+":"+getName.getText()+":"+getPhoneNum.getText();
+        PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+     
+        pw.println(m);
+        pw.flush();
 		
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)submitBtn.getScene().getWindow();
