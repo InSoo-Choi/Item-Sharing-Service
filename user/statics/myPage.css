@@ -1,0 +1,54 @@
+#mpTopHbox {
+	-fx-background-color: #6b3cab;
+}
+#mpTitle {
+	-fx-text-fill: white;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+	-fx-font-weight: bold;
+}
+#mpBtnColor {
+	-fx-background-color: #8b6ab8;
+}
+#mpBtn1 {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+  	-fx-font-weight: bold;
+  	-fx-border-width: 0px;
+  	-fx-border-color: transparent;
+}
+#mpBtn2 {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+  	-fx-font-weight: bold;
+  	-fx-border-width: 0px;
+  	-fx-border-color: transparent;
+}
+#mpBtn3 {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+  	-fx-font-weight: bold;
+  	-fx-border-width: 0px;
+  	-fx-border-color: transparent;
+}
+#mpBtn4 {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+  	-fx-font-weight: bold;
+  	-fx-border-width: 0px;
+  	-fx-border-color: transparent;
+}
+#mpBtn5 {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+  	-fx-font-weight: bold;
+  	-fx-border-width: 0px;
+  	-fx-border-color: transparent;
+}
+#mpBtn6 {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+  	-fx-font-weight: bold;
+  	-fx-border-width: 0px;
+  	-fx-border-color: transparent;
+}

@@ -24,11 +24,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.layout.HBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 
 public class UserMainController implements Initializable {
 	
-	@FXML Button moveMypage_Btn;
+	
 	@FXML ComboBox<String> kinds;
 	@FXML TableView itemListTable;
 	@FXML TableColumn numCol;
@@ -37,12 +40,24 @@ public class UserMainController implements Initializable {
 	@FXML TableColumn limitCol;
 	
 	ObservableList itemList = database.DBItems.loadItems();
+	@FXML Button umbtn1;
+	@FXML Button umbtn2;
+	@FXML Button umbtn3;
+	@FXML Button umbtn4;
+	@FXML Button umbtn5;
+	@FXML Button umbtn6;
+	@FXML HBox umtopHbox;
+	@FXML Label umMoveUserHome;
+	@FXML Label umTotal;
+	@FXML Button umAddBtn;
+	@FXML Button umMoveMypage_Btn;
+	@FXML HBox umBtnColor;
 	
 	@FXML public void moveMyPage() throws Exception {
 		Stage primaryStage = new Stage();
-		Stage stage = (Stage)moveMypage_Btn.getScene().getWindow();
-
+		Stage stage = (Stage)umMoveMypage_Btn.getScene().getWindow();
 			Parent ob = FXMLLoader.load(getClass().getResource("templates/myPage.fxml"));
+			ob.getStylesheets().add(getClass().getResource("statics/myPage.css").toExternalForm());
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
@@ -50,20 +65,22 @@ public class UserMainController implements Initializable {
 }
 	@FXML public void moveAdd() throws Exception {
 		Stage primaryStage = new Stage();
-		Stage stage = (Stage)moveMypage_Btn.getScene().getWindow();
+		Stage stage = (Stage)umMoveMypage_Btn.getScene().getWindow();
 
 			Parent ob = FXMLLoader.load(getClass().getResource("templates/addItem.fxml"));
+			ob.getStylesheets().add(getClass().getResource("statics/addItem.css").toExternalForm());
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
 			stage.close();
 	}
 	
-	@FXML public void moveLike() throws Exception {
+	@FXML public void umMoveLike() throws Exception {
 		Stage primaryStage = new Stage();
-		Stage stage = (Stage)moveMypage_Btn.getScene().getWindow();
+		Stage stage = (Stage)umMoveMypage_Btn.getScene().getWindow();
 
 			Parent ob = FXMLLoader.load(getClass().getResource("templates/like.fxml"));
+			ob.getStylesheets().add(getClass().getResource("statics/like.css").toExternalForm());
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
@@ -119,8 +136,9 @@ public class UserMainController implements Initializable {
 	public void moveShowOne() throws Exception {
 		
         Stage primaryStage = new Stage();
-		Stage stage = (Stage)moveMypage_Btn.getScene().getWindow();
+		Stage stage = (Stage)umMoveMypage_Btn.getScene().getWindow();
 		Parent ob = FXMLLoader.load(getClass().getResource("templates/showOnePost.fxml"));
+		ob.getStylesheets().add(getClass().getResource("statics/showOnePost.css").toExternalForm());
 		Scene sc = new Scene(ob);
 		primaryStage.setScene(sc);
         primaryStage.show();
