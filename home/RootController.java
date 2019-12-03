@@ -74,18 +74,23 @@ public class RootController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		final String SERVER_IP = "192.168.1.191";
+		if(!MyInfo.socketConnect) {
+		final String SERVER_IP = "172.30.1.38";
 		final int SERVER_PORT = 8080;
 		
         socket = new Socket();
         
         try {
             socket.connect( new InetSocketAddress(SERVER_IP, SERVER_PORT) );
-            System.out.println("서버접속성공");
-       }
+            System.out.println("success connection to server");
+            MyInfo.setConnect(true);
+            MyInfo.setSocket(socket);
+        }
+        
         catch (IOException e) {
             e.printStackTrace();
         }
+	}
         
 	}
 	
@@ -115,13 +120,15 @@ public class RootController implements Initializable {
 	
 	
 	@FXML public void UserLogin(ActionEvent event) throws Exception {
-
+		
+		socket = MyInfo.socket;
+		
 		MyInfo.setID(inputID.getText());
 		
 		if(inputPW.getText().equals("")) {
 			Alert loginFail = new Alert(AlertType.ERROR);
 			loginFail.setHeaderText("Empty error");
-			loginFail.setContentText("아이디 또는 비밀번호를 입력해주세요");
+			loginFail.setContentText("Pleas input ID or Password");
 			loginFail.showAndWait();
 		}
 		
@@ -157,7 +164,7 @@ public class RootController implements Initializable {
 		else {
 		Alert loginFail = new Alert(AlertType.ERROR);
 		loginFail.setHeaderText("Login Fail");
-		loginFail.setContentText("로그인 실패");
+		loginFail.setContentText("login fail");
 		loginFail.showAndWait();
 		}
 	}
@@ -169,7 +176,7 @@ public class RootController implements Initializable {
 		if(inputManagerPW.getText().equals("")) {
 			Alert loginFail = new Alert(AlertType.ERROR);
 			loginFail.setHeaderText("Login Fail");
-			loginFail.setContentText("아이디 또는 비밀번호를 입력해주세요.");
+			loginFail.setContentText("Pleas input ID or Password");
 			loginFail.showAndWait();
 		}
 		else if(PWfromDB.equals(inputManagerPW.getText())) {
@@ -193,7 +200,7 @@ public class RootController implements Initializable {
 	}
 
 	
-	//�쉶�썝媛��엯
+	//submit in register
 	@FXML public void submitUserSignup(ActionEvent event) throws Exception {
 		if(getID.getText().equals("") || getPW.getText().equals("") || getName.getText().equals("") || getPhoneNum.getText().equals("")) {
 			Alert emptyError = new Alert(AlertType.ERROR);
@@ -216,12 +223,18 @@ public class RootController implements Initializable {
 		}
 		
 		else {
-//		database.DBMembers.members_insert(getID.getText(), getPW.getText(), getName.getText(), getPhoneNum.getText());
+		socket = MyInfo.socket;
+		
 		String m = "Register:" + getID.getText()+":"+getPW.getText()+":"+getName.getText()+":"+getPhoneNum.getText();
         PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
      
         pw.println(m);
         pw.flush();
+        
+        Alert noCheckID = new Alert(AlertType.CONFIRMATION);
+		noCheckID.setHeaderText("Register success");
+		noCheckID.setContentText("Now, you can login");
+		noCheckID.showAndWait();
 		
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)submitBtn.getScene().getWindow();
@@ -235,20 +248,43 @@ public class RootController implements Initializable {
 		}
 	}
 
-	@FXML public void checkExistID() {
-		checkNum = DBMembers.IDcheck(getID.getText());
+	@FXML public void checkExistID(){
+		socket = MyInfo.socket;
+		
+		if(getID.getText().equals("")) {
+			Alert noCheckID = new Alert(AlertType.ERROR);
+			noCheckID.setHeaderText("ID input error");
+			noCheckID.setContentText("Please input ID");
+			noCheckID.showAndWait();
+			return;
+		}
+		
+        try {
+           String m = "checkID:" + getID.getText();
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+          checkNum = Integer.parseInt(br.readLine());
+          
+          
+        } catch (IOException e1) {
+           e1.printStackTrace();
+        }
 		
 		switch(checkNum) {
 		case 0:
 			Alert exist = new Alert(AlertType.INFORMATION);
-			exist.setHeaderText("ID is exist");
-			exist.setContentText("id cneck again");
+			exist.setHeaderText("ID is available");
+			exist.setContentText("ID is available");
 			exist.showAndWait();
 			break;
 		case 1:
 			Alert noExist = new Alert(AlertType.WARNING);
-			noExist.setHeaderText("ID is available");
-			noExist.setContentText("ID is available");
+			noExist.setHeaderText("ID is exist");
+			noExist.setContentText("id cneck again");
 			noExist.showAndWait();
 			break;
 		}	
