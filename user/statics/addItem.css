@@ -1,3 +1,6 @@
+@font-face{
+   src:url(DXPnM-KSCpc-EUC-H.ttf);
+}
 #aiTopHbox {
 	-fx-background-color: #6b3cab;
 }
@@ -6,6 +9,7 @@
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
+	-fx-font-family: "DX시인과나";
 }
 #aiBtnColor {
 	-fx-background-color: #8b6ab8;
@@ -16,6 +20,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #aiBtn2 {
 	-fx-background-color: transparent;
@@ -23,6 +28,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #aiBtn3 {
 	-fx-background-color: transparent;
@@ -30,6 +36,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #aiBtn4 {
 	-fx-background-color: transparent;
@@ -37,6 +44,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #aiBtn5 {
 	-fx-background-color: transparent;
@@ -44,6 +52,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #aiBtn6 {
 	-fx-background-color: transparent;
@@ -51,4 +60,5 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }

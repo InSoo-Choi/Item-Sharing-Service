@@ -73,24 +73,24 @@
                   <Line endX="300.0" endY="-1.000006079673767" layoutX="140.0" layoutY="1.0" startX="-140.0" startY="-1.000006079673767" />
                   <Line endX="313.3999938964844" endY="-0.40000152587890625" layoutX="115.0" layoutY="53.0" startX="-100.0" stroke="#b7b7b7" />
                   <Line endX="47.899993896484375" endY="-61.39997100830078" layoutX="301.0" layoutY="102.0" startX="47.899993896484375" startY="-79.79999542236328" />
-                  <Label layoutX="355.0" layoutY="25.0" prefHeight="14.0" prefWidth="71.0" text="카테고리" />
+                  <Label fx:id="sopCategory" layoutX="355.0" layoutY="25.0" prefHeight="14.0" prefWidth="71.0" text="카테고리" />
                   <Label fx:id="postName" layoutX="61.0" layoutY="13.0" prefHeight="38.0" prefWidth="283.0" text="목베개 대여합니다~!" />
-                  <Label layoutX="22.0" layoutY="61.0" prefHeight="17.0" prefWidth="48.0" text="writerID" />
+                  <Label fx:id="sopWriterID" layoutX="22.0" layoutY="61.0" prefHeight="17.0" prefWidth="48.0" text="writerID" />
                   <HBox layoutX="224.0" layoutY="63.0" prefHeight="61.0" prefWidth="188.0">
                      <children>
                         <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label text="게시물 작성일">
+                              <Label fx:id="sopLab1" text="게시물 작성일">
                                  <VBox.margin>
                                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="대여가능일">
+                              <Label fx:id="sopLab2" text="대여가능일">
                                  <VBox.margin>
                                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="1일대여료">
+                              <Label fx:id="sopLab3" text="1일대여료">
                                  <VBox.margin>
                                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </VBox.margin>
@@ -99,17 +99,17 @@
                         </VBox>
                         <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label prefHeight="17.0" prefWidth="80.0" text="2019.00.00">
+                              <Label fx:id="sopDate1" prefHeight="17.0" prefWidth="80.0" text="2019.00.00">
                                  <VBox.margin>
                                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label prefHeight="17.0" prefWidth="80.0" text="2019.00.00">
+                              <Label fx:id="sopDate2" prefHeight="17.0" prefWidth="80.0" text="2019.00.00">
                                  <VBox.margin>
                                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label prefHeight="17.0" prefWidth="80.0" text="0">
+                              <Label fx:id="sopMoney" prefHeight="17.0" prefWidth="80.0" text="0">
                                  <VBox.margin>
                                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </VBox.margin>
@@ -118,15 +118,15 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <Button layoutX="14.0" layoutY="20.0" mnemonicParsing="false" text="♥" />
+                  <Button fx:id="sopLikeBtn" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" text="♥" />
                   <HBox layoutX="-1.0" layoutY="418.0" prefHeight="22.0" prefWidth="442.0">
                      <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#moveUserHome" text="이전으로" HBox.hgrow="ALWAYS">
+                        <Button fx:id="sopMoveUserHomeBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#moveUserHome" text="이전으로" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="70.0" right="30.0" />
                            </HBox.margin>
                         </Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="대여하기" HBox.hgrow="ALWAYS">
+                        <Button fx:id="sopRentBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="대여하기" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="30.0" right="70.0" />
                            </HBox.margin>

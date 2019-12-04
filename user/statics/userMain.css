@@ -1,3 +1,6 @@
+@font-face{
+   src:url(DXPnM-KSCpc-EUC-H.ttf);
+}
 #umtopHbox {
 	-fx-background-color: #6b3cab;
 }
@@ -6,6 +9,7 @@
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
+	-fx-font-family: "DX시인과나";
 }
 #umBtnColor {
 	-fx-background-color: #8b6ab8;
@@ -17,6 +21,49 @@
   	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
+  	-fx-font-family: "DX시인과나";
+}
+#itemListTable {
+	-fx-font-size: 20px;
+	-fx-text-fill: black;
+	-fx-alignment: center-left;
+	-fx-opacity: 1;
+	-fx-background-color: transparent;
+	-fx-font-family: "DX시인과나";
+}
+.table-view {
+	-fx-background-color: transparent;
+}
+.table-view:focused {
+	-fx-background-color: transparent;
+}
+.table-view .column-header-background {
+	-fx-background-color: #8b6ab8;
+}
+.table-view .column-header-background .label {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+.table-view .column-header {
+	-fx-background-color: #8b6ab8;
+}
+.table-view .table-cell {
+	-fx-text-fill: black;
+}
+.table-row-cell {
+	-fx-background-color: -fx-table-cell-border-color, #8b6ab8;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-padding: 0.0em;
+}
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
 }
 #umbtn1 {
 	-fx-background-color: transparent;
@@ -24,6 +71,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #umbtn2 {
 	-fx-background-color: transparent;
@@ -31,6 +79,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #umbtn3 {
 	-fx-background-color: transparent;
@@ -38,6 +87,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #umbtn4 {
 	-fx-background-color: transparent;
@@ -45,6 +95,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #umbtn5 {
 	-fx-background-color: transparent;
@@ -52,6 +103,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #umbtn6 {
 	-fx-background-color: transparent;
@@ -59,7 +111,9 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
+  	-fx-font-family: "DX시인과나";
 }
 #umTotal {
 	-fx-text-fill: black;
+	-fx-font-family: "DX시인과나";
 }
