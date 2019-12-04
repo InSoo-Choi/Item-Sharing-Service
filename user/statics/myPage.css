@@ -8,57 +8,74 @@
 	-fx-text-fill: white;
 	-fx-alignment: center;
 	-fx-text-alignment: center;
+}
+#mpBackColor {
+	-fx-background-color: #8b6ab8;
+}
+Line {
+	-fx-stroke: #6b3cab;
+	-fx-stroke-width: 5px;
+}
+Label {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+Button {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#mpLabel {
+	-fx-text-fill: #6b3cab;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+}
+#mpNotificationLabel {
+	-fx-text-fill: #6b3cab;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+}
+#mpMythingBtn {
+	
+}
+#mpYourthingBtn {
+	
+}
 #mpBtnColor {
-	-fx-background-color: #8b6ab8;
+	-fx-background-color: transparent;
 }
 #mpBtn1 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
-  	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mpBtn2 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
-  	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mpBtn3 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
-  	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mpBtn4 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
-  	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mpBtn5 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
-  	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mpBtn6 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
-  	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
