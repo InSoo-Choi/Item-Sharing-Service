@@ -26,6 +26,17 @@ public class postController {
 	@FXML Label contentArea;
 	@FXML Label idOutput;
 	@FXML Label sopTitle;
+	@FXML Label sopCategory;
+	@FXML Label sopWriterID;
+	@FXML Label sopLab1;
+	@FXML Label sopLab2;
+	@FXML Label sopLab3;
+	@FXML Label sopDate1;
+	@FXML Label sopDate2;
+	@FXML Label sopMoney;
+	@FXML Button sopLikeBtn;
+	@FXML Button sopMoveUserHomeBtn;
+	@FXML Button sopRentBtn;
 
 	@FXML public void showonepostmoveMyPage() throws Exception{
 		 	Stage primaryStage = new Stage();
