@@ -25,6 +25,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import javafx.scene.control.ListView;
 
 public class MyPageController implements Initializable {
 
@@ -56,6 +57,7 @@ public class MyPageController implements Initializable {
 	@FXML Label mpLab1;
 	@FXML Label mpLab2;
 	@FXML Label mpLab3;
+	@FXML ListView mpNotiView;
 
 	
 	void init() {
