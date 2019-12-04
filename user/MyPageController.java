@@ -23,6 +23,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
 
 public class MyPageController implements Initializable {
 
@@ -41,6 +43,19 @@ public class MyPageController implements Initializable {
 	@FXML Button mpBtn6;
 	@FXML Button mpMoveUserHome;
 	@FXML Label mpTitle;
+	@FXML Label mpLabel;
+	@FXML AnchorPane mpPaneUnderLabel;
+	@FXML Button mpMythingBtn;
+	@FXML Button mpYourthingBtn;
+	@FXML Label mpNotificationLabel;
+	@FXML Line mpLine1;
+	@FXML Line mpLine2;
+	@FXML Line mpLine3;
+	@FXML Line mpLine4;
+	@FXML AnchorPane mpBackColor;
+	@FXML Label mpLab1;
+	@FXML Label mpLab2;
+	@FXML Label mpLab3;
 
 	
 	void init() {
