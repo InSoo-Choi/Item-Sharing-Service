@@ -17,7 +17,7 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Item Sharing Service");
 		primaryStage.show();
-		Font.loadFont(getClass().getResourceAsStream("statics/DXPnM-KSCpc-EUC-H.ttf"),14);
+		Font.loadFont(getClass().getResourceAsStream("statics/NanumBarunpenR.ttf"),14);
 	}
 
 	public static void main(String[] args) {

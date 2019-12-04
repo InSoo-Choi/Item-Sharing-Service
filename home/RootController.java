@@ -28,6 +28,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 public class RootController implements Initializable {
 
@@ -70,7 +71,7 @@ public class RootController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		if(!MyInfo.socketConnect) {
-		final String SERVER_IP = "192.168.1.190";
+		final String SERVER_IP = "192.168.56.1";
 		final int SERVER_PORT = 8080;
 		
         socket = new Socket();
@@ -151,6 +152,7 @@ public class RootController implements Initializable {
 			
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/user/templates/userMain.fxml"));
 				UserPage.getStylesheets().add(getClass().getResource("/user/statics/userMain.css").toExternalForm());
+				Font.loadFont(getClass().getResourceAsStream("statics/NanumBarunpenR.ttf"),14);
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();

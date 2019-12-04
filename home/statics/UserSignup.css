@@ -1,5 +1,5 @@
 @font-face{
-   src:url(DXPnM-KSCpc-EUC-H.ttf);
+   src:url(NanumBarunpenR.ttf);
 }
 .root {
 	-fx-background-size: 400 600;
@@ -16,7 +16,7 @@ Label {
 	-fx-text-fill: white;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
-	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #submitBtn {
   	-fx-background-color: transparent;
@@ -25,7 +25,7 @@ Label {
   	-fx-font-weight: bold;
   	-fx-border-width: 4px;
   	-fx-border-color: linear-gradient(to left, #FA8C25, #F5119A);
-  	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+  	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #home2 {
 	-fx-background-color: transparent;
@@ -39,5 +39,5 @@ Label {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
-	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }

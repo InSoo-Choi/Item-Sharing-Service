@@ -1,5 +1,5 @@
 @font-face{
-   src:url(DXPnM-KSCpc-EUC-H.ttf);
+   src:url(NanumBarunpenR.ttf);
 }
 #likeTopHbox {
 	-fx-background-color: #6b3cab;
@@ -9,7 +9,7 @@
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
-	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #likeBtnColor {
 	-fx-background-color: #8b6ab8;
@@ -20,7 +20,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+  	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #likeBtn2 {
 	-fx-background-color: transparent;
@@ -28,7 +28,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+  	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #likeBtn3 {
 	-fx-background-color: transparent;
@@ -36,7 +36,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+  	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #likeBtn4 {
 	-fx-background-color: transparent;
@@ -44,7 +44,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+  	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #likeBtn5 {
 	-fx-background-color: transparent;
@@ -52,7 +52,7 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+  	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
 #likeBtn6 {
 	-fx-background-color: transparent;
@@ -60,5 +60,5 @@
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "DX½ΓΐΞ°ϊ³ª";
+  	-fx-font-family: "λ‚λ”λ°”λ¥Έν";
 }
