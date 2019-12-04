@@ -22,7 +22,7 @@
 	-fx-font-family: "나눔바른펜";
 }
 #umTotal {
-	-fx-font-weight: bold;
+	-fx-text-fill: black;
 	-fx-font-family: "나눔바른펜";
 }
 #umAddBtn {
@@ -118,10 +118,5 @@
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
   	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
-}
-#umTotal {
-	-fx-text-fill: black;
-	-fx-font-size: 14px;
 	-fx-font-family: "나눔바른펜";
 }

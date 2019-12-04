@@ -46,7 +46,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <AnchorPane prefHeight="146.0" prefWidth="440.0">
+            <AnchorPane prefHeight="92.0" prefWidth="442.0">
                <children>
                   <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -64,21 +64,23 @@
                         <Button fx:id="sopBtn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기타" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <HBox layoutX="18.0" layoutY="129.0" prefHeight="20.0" prefWidth="403.0" />
-                  <Button fx:id="sopAddBtn" layoutX="372.0" layoutY="118.0" mnemonicParsing="false" text="글쓰기" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="466.0" prefWidth="440.0">
+            <ImageView fitHeight="80.0" fitWidth="447.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/banner1.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane prefHeight="460.0" prefWidth="442.0">
                <children>
-                  <Line endX="300.0" endY="-1.000006079673767" layoutX="140.0" layoutY="1.0" startX="-140.0" startY="-1.000006079673767" />
                   <Line endX="313.3999938964844" endY="-0.40000152587890625" layoutX="115.0" layoutY="53.0" startX="-100.0" stroke="#b7b7b7" />
-                  <Line endX="47.899993896484375" endY="-61.39997100830078" layoutX="301.0" layoutY="102.0" startX="47.899993896484375" startY="-79.79999542236328" />
+                  <Line endX="47.89996337890625" endY="-50.10709762573242" layoutX="301.0" layoutY="102.0" startX="47.899993896484375" startY="-79.79999542236328" />
                   <Label fx:id="sopCategory" layoutX="355.0" layoutY="25.0" prefHeight="14.0" prefWidth="71.0" text="카테고리" />
                   <Label fx:id="postName" layoutX="61.0" layoutY="13.0" prefHeight="38.0" prefWidth="283.0" text="목베개 대여합니다~!" />
                   <Label fx:id="sopWriterID" layoutX="22.0" layoutY="61.0" prefHeight="17.0" prefWidth="48.0" text="writerID" />
-                  <HBox layoutX="224.0" layoutY="63.0" prefHeight="61.0" prefWidth="188.0">
+                  <HBox layoutX="187.0" layoutY="63.0" prefHeight="62.0" prefWidth="225.0">
                      <children>
-                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="143.0">
                            <children>
                               <Label fx:id="sopLab1" text="게시물 작성일">
                                  <VBox.margin>
@@ -96,8 +98,11 @@
                                  </VBox.margin>
                               </Label>
                            </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
                         </VBox>
-                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="90.0">
                            <children>
                               <Label fx:id="sopDate1" prefHeight="17.0" prefWidth="80.0" text="2019.00.00">
                                  <VBox.margin>
@@ -119,7 +124,7 @@
                      </children>
                   </HBox>
                   <Button fx:id="sopLikeBtn" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" text="♥" />
-                  <HBox layoutX="-1.0" layoutY="418.0" prefHeight="22.0" prefWidth="442.0">
+                  <HBox layoutY="392.0" prefHeight="22.0" prefWidth="442.0">
                      <children>
                         <Button fx:id="sopMoveUserHomeBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#moveUserHome" text="이전으로" HBox.hgrow="ALWAYS">
                            <HBox.margin>
@@ -133,7 +138,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Label fx:id="contentArea" layoutX="22.0" layoutY="153.0" prefHeight="237.0" prefWidth="394.0" style="-fx-border-color: #555;" text="Label" />
+                  <Label fx:id="contentArea" layoutX="22.0" layoutY="153.0" prefHeight="213.0" prefWidth="394.0" style="-fx-border-color: #555;" text="Label" />
                   <Label fx:id="idOutput" layoutX="70.0" layoutY="61.0" prefHeight="17.0" prefWidth="121.0" />
                </children>
             </AnchorPane>

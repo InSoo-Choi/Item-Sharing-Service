@@ -46,8 +46,6 @@ public class MyPageController implements Initializable {
 	@FXML Label mpTitle;
 	@FXML Label mpLabel;
 	@FXML AnchorPane mpPaneUnderLabel;
-	@FXML Button mpMythingBtn;
-	@FXML Button mpYourthingBtn;
 	@FXML Label mpNotificationLabel;
 	@FXML Line mpLine1;
 	@FXML Line mpLine2;
@@ -58,7 +56,8 @@ public class MyPageController implements Initializable {
 	@FXML Label mpLab2;
 	@FXML Label mpLab3;
 	@FXML ListView mpNotiView;
-
+	@FXML Button mpMythingsBtn;
+	@FXML Button mpYourthingsBtn;
 	
 	void init() {
 		Socket socket = MyInfo.socket;

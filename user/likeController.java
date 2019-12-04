@@ -28,6 +28,7 @@ public class likeController {
 	@FXML Line likeLine1;
 	@FXML Label likeLabel;
 	@FXML Line likeLine2;
+	@FXML Button likeEraseBtn;
 
 	@FXML public void likemoveMyPage() throws Exception{
 		Stage primaryStage = new Stage();

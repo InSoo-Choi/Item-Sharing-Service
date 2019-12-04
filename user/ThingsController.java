@@ -54,6 +54,11 @@ public class ThingsController {
 	@FXML TableColumn moneyCol;
 	@FXML TableColumn likeCol;
 	@FXML AnchorPane ytBackColor;
+	@FXML Button ytMoveMypageBtn;
+	@FXML Button ytReturnBtn;
+	@FXML Label mtMythingsLabel;
+	@FXML Button mtMoveMypageBtn;
+	@FXML Button mtEraseBtn;
 
 	@FXML public void myThingsmoveUserHome() throws Exception {
 		

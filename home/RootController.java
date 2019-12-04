@@ -72,7 +72,7 @@ public class RootController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		if(!MyInfo.socketConnect) {
 
-		final String SERVER_IP = "172.30.1.54";
+		final String SERVER_IP = "192.168.56.1";
 
 		final int SERVER_PORT = 8080;
 		
@@ -200,7 +200,8 @@ public class RootController implements Initializable {
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)managerOK.getScene().getWindow();
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/manager/templates/managerMain.fxml"));
-				//UserPage.getStylesheets().add(getClass().getResource("statics/managerMain.css").toExternalForm());
+				UserPage.getStylesheets().add(getClass().getResource("/manager/statics/managerMain.css").toExternalForm());
+				Font.loadFont(getClass().getResourceAsStream("statics/NanumBarunpenR.ttf"),14);
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();

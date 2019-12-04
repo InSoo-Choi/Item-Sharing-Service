@@ -11,7 +11,7 @@
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#mtBackColor {
+#ytBackColor {
 	-fx-background-color: #8b6ab8;
 }
 Line {
@@ -26,10 +26,26 @@ Button {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#ytYourthingLabel {
+#ytYourthingsLabel {
 	-fx-text-fill: #6b3cab;
 	-fx-alignment: center;
 	-fx-text-alignment: center;
+}
+#ytMoveMypageBtn {
+	-fx-background-color: #8b6ab8;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#ytReturnBtn {
+	-fx-background-color: #8b6ab8;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
 }
 .table-view {
 	-fx-background-color: transparent;
