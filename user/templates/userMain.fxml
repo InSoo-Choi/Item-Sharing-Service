@@ -76,12 +76,11 @@
             </AnchorPane>
             <TableView fx:id="itemListTable" prefHeight="458.0" prefWidth="440.0">
               <columns>
-                  <TableColumn fx:id="numCol" prefWidth="35.20001220703125" text="순번" />
-                <TableColumn fx:id="nameCol" prefWidth="139.2000732421875" text="제목" />
-                <TableColumn fx:id="idCol" prefWidth="67.99993896484375" text="작성자" />
-                  <TableColumn fx:id="limitCol" prefWidth="98.4000244140625" text="최대대여가능일" />
-                  <TableColumn prefWidth="64.00006103515625" text="가격" />
-                  <TableColumn prefWidth="34.39996337890625" text="♥" />
+                <TableColumn fx:id="nameCol" prefWidth="127.99999696016312" text="제목" />
+                <TableColumn fx:id="idCol" text="작성자" />
+                  <TableColumn fx:id="limitCol" prefWidth="113.60005187988281" text="최대대여가능일" />
+                  <TableColumn prefWidth="72.00006103515625" text="가격" />
+                  <TableColumn prefWidth="44.7999267578125" text="♥" />
               </columns>
             </TableView>
          </children>
