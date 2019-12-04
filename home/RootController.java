@@ -71,7 +71,9 @@ public class RootController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		if(!MyInfo.socketConnect) {
+
 		final String SERVER_IP = "172.30.1.54";
+
 		final int SERVER_PORT = 8080;
 		
         socket = new Socket();
