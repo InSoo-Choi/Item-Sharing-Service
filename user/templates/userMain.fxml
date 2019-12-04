@@ -14,6 +14,7 @@
 
 <AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserMainController">
    <children>
+      <AnchorPane fx:id="umBackColor" layoutY="35.0" prefHeight="176.0" prefWidth="440.0" />
       <VBox prefHeight="660.0" prefWidth="440.0">
          <children>
             <HBox fx:id="umtopHbox" prefHeight="34.0" prefWidth="440.0">

@@ -11,16 +11,19 @@
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+#umBackColor {
+	-fx-background-color: #8b6ab8;
+}
 #umBtnColor {
 	-fx-background-color: #8b6ab8;
 }
 #umAddBtn {
-	-fx-background-color: #8b6ab8;
-	-fx-background-radius: 20px;
-  	-fx-border-radius: 20px;
-  	-fx-text-fill: white;
+	-fx-background-color: black;
+	-fx-background-radius: 2px;
+	-fx-border-width: 5px;
+  	-fx-border-radius: 2px;
+  	-fx-text-fill: black;
   	-fx-font-weight: bold;
-  	-fx-border-width: 0px;
   	-fx-font-family: "나눔바른펜";
 }
 .table-view {

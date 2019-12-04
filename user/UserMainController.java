@@ -22,6 +22,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 public class UserMainController implements Initializable {
 	
@@ -46,6 +47,7 @@ public class UserMainController implements Initializable {
 	@FXML Button umAddBtn;
 	@FXML Button umMoveMypage_Btn;
 	@FXML HBox umBtnColor;
+	@FXML AnchorPane umBackColor;
 	
 	@FXML public void moveMyPage() throws Exception {
 		Stage primaryStage = new Stage();
