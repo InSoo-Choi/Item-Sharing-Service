@@ -40,6 +40,8 @@ public class UserMainController implements Initializable {
 	@FXML TableColumn nameCol;
 	@FXML TableColumn idCol;
 	@FXML TableColumn limitCol;
+	@FXML TableColumn priceCol;
+	@FXML TableColumn likeCol;
 	
 	ObservableList itemList = database.DBItems.loadItems();
 	@FXML Button umbtn1;
@@ -59,7 +61,7 @@ public class UserMainController implements Initializable {
 	@FXML Label numTotal;
 	
 	Socket socket;
-	
+
 	@FXML public void moveMyPage() throws Exception {
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)umMoveMypage_Btn.getScene().getWindow();
@@ -133,6 +135,18 @@ public class UserMainController implements Initializable {
 		limitCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
             public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                 return new SimpleStringProperty(param.getValue().get(4).toString());                        
+            }
+        });
+		
+		priceCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(5).toString());                        
+            }
+        });
+		
+		likeCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(6).toString());                        
             }
         });
 		
