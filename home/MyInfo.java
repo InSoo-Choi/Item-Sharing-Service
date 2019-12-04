@@ -9,6 +9,7 @@ public class MyInfo {
 	public static String my_phone;
 	public static boolean socketConnect = false;
 	public static Socket socket;
+	public static String onePostNum;
 	
 	public static void setName(String names) {
 		my_name = names;
@@ -24,6 +25,10 @@ public class MyInfo {
 	
 	public static void setConnect(boolean state) {
 		socketConnect = state;
+	}
+	
+	public static void setOnePostNum(String num) {
+		onePostNum = num;
 	}
 	
 	public String getName() {
