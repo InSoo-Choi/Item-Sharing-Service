@@ -58,44 +58,4 @@ public class DBItems {
         return ItemList;
 	}
 	
-	public static ObservableList<String> loadOnePost(String post_num) {
-		
-		Connection conn = null;
-        Statement stmt = null;
-        ResultSet rs = null;
-        
-        ObservableList<String> itemRow = FXCollections.observableArrayList();
-        
-        try {
-        	conn = DBconnect.connect();
-        	stmt = conn.createStatement();
-        	 
-        	String sql = "SELECT post_name, kinds, post_by_id, limit_date, pub_date, price, content  From items WHERE post_num ="+post_num;
-        	rs = stmt.executeQuery(sql);
-        	while(rs.next()) {
-        		for(int i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
-                    itemRow.add(rs.getString(i));
-                }
-        	}
-        	
-        } catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		finally{
-            try{
-                if( conn != null && !conn.isClosed()){
-                    conn.close();
-                }
-                if( stmt != null && stmt.isClosed()){
-                    stmt.close();
-                }
-            }
-            catch( SQLException e){
-                e.printStackTrace();
-            }
-        }
-        
-        return itemRow;
-	}
 }

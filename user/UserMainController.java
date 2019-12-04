@@ -3,6 +3,7 @@ package user;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import home.MyInfo;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -112,15 +113,18 @@ public class UserMainController implements Initializable {
 		limitCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
             public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                 return new SimpleStringProperty(param.getValue().get(4).toString());                        
-            }                    
+            }
         });
 		
 		
 		itemListTable.setOnMousePressed(new EventHandler<MouseEvent>() {
 		    @Override 
-		    public void handle(MouseEvent event) {
+		    public void handle	(MouseEvent event) {
 		        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
 		            try {
+		            	String[] rowData = itemListTable.getSelectionModel().getSelectedItem().toString().split(",");
+		            	MyInfo.setOnePostNum(rowData[0].substring(1));
+		            	
 						moveShowOne();
 					} catch (Exception e) {
 						e.printStackTrace();
