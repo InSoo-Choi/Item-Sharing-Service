@@ -25,7 +25,7 @@ public class DBItems {
         	conn = DBconnect.connect();
         	stmt = conn.createStatement();
         	 
-        	String sql = "SELECT post_num, post_name, kinds, post_by_id, limit_date From items";
+        	String sql = "SELECT post_num, post_name, kinds, post_by_id, limit_date, price, like_num From items";
         	rs = stmt.executeQuery(sql);
         	
         	while(rs.next()) {

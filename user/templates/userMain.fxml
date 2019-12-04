@@ -79,8 +79,8 @@
                 <TableColumn fx:id="nameCol" prefWidth="127.99999696016312" text="제목" />
                 <TableColumn fx:id="idCol" text="작성자" />
                   <TableColumn fx:id="limitCol" prefWidth="113.60005187988281" text="최대대여가능일" />
-                  <TableColumn prefWidth="72.00006103515625" text="가격" />
-                  <TableColumn prefWidth="44.7999267578125" text="♥" />
+                  <TableColumn fx:id="priceCol" prefWidth="72.00006103515625" text="가격" />
+                  <TableColumn fx:id="likeCol" prefWidth="44.7999267578125" text="♥" />
               </columns>
             </TableView>
          </children>
