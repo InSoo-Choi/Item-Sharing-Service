@@ -48,6 +48,7 @@ public class UserMainController implements Initializable {
 	@FXML Button umMoveMypage_Btn;
 	@FXML HBox umBtnColor;
 	@FXML AnchorPane umBackColor;
+	@FXML Label umTotalLabel;
 	
 	@FXML public void moveMyPage() throws Exception {
 		Stage primaryStage = new Stage();

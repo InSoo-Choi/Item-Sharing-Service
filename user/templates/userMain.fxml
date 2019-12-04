@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserMainController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="user.UserMainController">
    <children>
       <AnchorPane fx:id="umBackColor" layoutY="35.0" prefHeight="176.0" prefWidth="440.0" />
       <VBox prefHeight="660.0" prefWidth="440.0">
@@ -67,7 +67,7 @@
                   </HBox>
                   <HBox layoutX="18.0" layoutY="129.0" prefHeight="20.0" prefWidth="193.0">
                      <children>
-                        <Label maxHeight="1.7976931348623157E308" text="TOTAL  " HBox.hgrow="ALWAYS" />
+                        <Label fx:id="umTotalLabel" maxHeight="1.7976931348623157E308" text="TOTAL  " HBox.hgrow="ALWAYS" />
                         <Label fx:id="umTotal" maxHeight="1.7976931348623157E308" text="0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
