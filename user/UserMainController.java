@@ -1,6 +1,13 @@
 package user;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
 
 import home.MyInfo;
@@ -30,10 +37,11 @@ public class UserMainController implements Initializable {
 	
 	@FXML ComboBox<String> kinds;
 	@FXML TableView itemListTable;
-	@FXML TableColumn numCol;
 	@FXML TableColumn nameCol;
 	@FXML TableColumn idCol;
 	@FXML TableColumn limitCol;
+	@FXML TableColumn priceCol;
+	@FXML TableColumn likeCol;
 	
 	ObservableList itemList = database.DBItems.loadItems();
 	@FXML Button umbtn1;
@@ -50,7 +58,10 @@ public class UserMainController implements Initializable {
 	@FXML HBox umBtnColor;
 	@FXML AnchorPane umBackColor;
 	@FXML Label umTotalLabel;
+	@FXML Label numTotal;
 	
+	Socket socket;
+
 	@FXML public void moveMyPage() throws Exception {
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)umMoveMypage_Btn.getScene().getWindow();
@@ -88,15 +99,26 @@ public class UserMainController implements Initializable {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL location, ResourceBundle resources){
+		socket = MyInfo.socket;
+		
+		String cnt = null;
+        try {
+           String m = "itemsCnt:";
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+          cnt = br.readLine();
+          
+          numTotal.setText(cnt);
+          
+        } catch (IOException e1) {
+           e1.printStackTrace();
+        }
 		
 		itemListTable.setItems(itemList);
-		
-		
-		numCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
-            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                return new SimpleStringProperty(param.getValue().get(0).toString());                        
-            }
-        });
 		
 		nameCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
             public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
@@ -113,6 +135,18 @@ public class UserMainController implements Initializable {
 		limitCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
             public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                 return new SimpleStringProperty(param.getValue().get(4).toString());                        
+            }
+        });
+		
+		priceCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(5).toString());                        
+            }
+        });
+		
+		likeCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(6).toString());                        
             }
         });
 		
