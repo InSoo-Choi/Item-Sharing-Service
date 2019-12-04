@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.likeController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.likeController">
    <children>
       <VBox prefHeight="660.0" prefWidth="442.0">
          <children>
@@ -84,7 +84,7 @@
                   </TableView>
                   <HBox layoutY="418.0" prefHeight="28.0" prefWidth="442.0">
                      <children>
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="22.0" prefWidth="71.0" text="삭제" HBox.hgrow="ALWAYS">
+                        <Button fx:id="likeEraseBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="22.0" prefWidth="71.0" text="삭제" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="160.0" right="160.0" />
                            </HBox.margin>

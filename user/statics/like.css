@@ -34,6 +34,47 @@ Button {
 #likeBtnColor {
 	-fx-background-color: #8b6ab8;
 }
+#likeEraseBtn {
+	-fx-background-color: #8b6ab8;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+.table-view {
+	-fx-background-color: transparent;
+}
+.table-view:focused {
+	-fx-background-color: transparent;
+}
+.table-view .column-header-background {
+	-fx-background-color: #8b6ab8;
+}
+.table-view .column-header-background .label {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
+}
+.table-view .column-header {
+	-fx-background-color: #8b6ab8;
+}
+.table-view .table-cell {
+	-fx-text-fill: black;
+	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
+}
+.table-row-cell {
+	-fx-background-color: transparent;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-padding: 0.0em;
+}
+.table-row-cell:selected {
+    -fx-background-color: -fx-table-cell-border-color, #8b6ab8;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
 #likeBtn1 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;

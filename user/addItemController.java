@@ -56,6 +56,9 @@ public class addItemController implements Initializable {
 	Socket socket = null;
 	@FXML Label aiTitle;
 	@FXML AnchorPane aiBackColor;
+	@FXML HBox aiTopHbox;
+	@FXML Button aiMoveUserHomeBtn;
+	@FXML Button aiPostSubmitBtn;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

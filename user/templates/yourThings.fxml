@@ -85,12 +85,12 @@
                   </TableView>
                   <HBox layoutY="418.0" prefHeight="28.0" prefWidth="442.0">
                      <children>
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#yourThingsmoveMyPage" prefHeight="22.0" prefWidth="71.0" text="이전으로" HBox.hgrow="ALWAYS">
+                        <Button fx:id="ytMoveMypageBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#yourThingsmoveMyPage" prefHeight="22.0" prefWidth="71.0" text="이전으로" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="70.0" right="30.0" />
                            </HBox.margin>
                         </Button>
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="22.0" prefWidth="71.0" text="삭제" HBox.hgrow="ALWAYS">
+                        <Button fx:id="ytReturnBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="22.0" prefWidth="71.0" text="반납" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="30.0" right="70.0" />
                            </HBox.margin>

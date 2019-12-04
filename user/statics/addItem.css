@@ -22,6 +22,22 @@ Button {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+#aiMoveUserHomeBtn {
+	-fx-background-color: #8b6ab8;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#aiPostSubmitBtn {
+	-fx-background-color: #8b6ab8;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
 #contents {
 	-fx-alignment: center;
 	-fx-font-weight: bold;

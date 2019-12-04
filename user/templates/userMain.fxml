@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserMainController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserMainController">
    <children>
       <AnchorPane fx:id="umBackColor" layoutY="35.0" prefHeight="176.0" prefWidth="440.0" />
       <VBox prefHeight="660.0" prefWidth="440.0">
@@ -47,7 +47,7 @@
                      </HBox.margin>
                   </ImageView>
                </children></HBox>
-            <AnchorPane prefHeight="160.0" prefWidth="440.0">
+            <AnchorPane prefHeight="199.0" prefWidth="440.0">
                <children>
                   <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -65,21 +65,21 @@
                         <Button fx:id="umbtn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기타" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <HBox layoutX="18.0" layoutY="129.0" prefHeight="20.0" prefWidth="193.0">
+                  <HBox layoutX="18.0" layoutY="173.0" prefHeight="20.0" prefWidth="193.0">
                      <children>
                         <Label fx:id="umTotalLabel" maxHeight="1.7976931348623157E308" text="TOTAL  " HBox.hgrow="ALWAYS" />
                         <Label fx:id="numTotal" maxHeight="1.7976931348623157E308" text="0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <Button fx:id="umAddBtn" layoutX="372.0" layoutY="127.0" mnemonicParsing="false" onAction="#moveAdd" text="글쓰기" />
+                  <Button fx:id="umAddBtn" layoutX="372.0" layoutY="171.0" mnemonicParsing="false" onAction="#moveAdd" text="글쓰기" />
                </children>
             </AnchorPane>
-            <TableView fx:id="itemListTable" prefHeight="458.0" prefWidth="440.0">
+            <TableView fx:id="itemListTable" prefHeight="416.0" prefWidth="440.0">
               <columns>
                 <TableColumn fx:id="nameCol" prefWidth="127.99999696016312" text="제목" />
                 <TableColumn fx:id="idCol" text="작성자" />
                   <TableColumn fx:id="limitCol" prefWidth="113.60005187988281" text="최대대여가능일" />
-                  <TableColumn fx:id="priceCol" prefWidth="72.00006103515625" text="가격" />
+                  <TableColumn fx:id="priceCol" prefWidth="72.00006103515625" text="하루가격" />
                   <TableColumn fx:id="likeCol" prefWidth="44.7999267578125" text="♥" />
               </columns>
             </TableView>
@@ -87,5 +87,10 @@
       </VBox>
       <Button fx:id="umMoveMypage_Btn" layoutX="404.0" layoutY="8.0" mnemonicParsing="false" onAction="#moveMyPage" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #00000000;" />
       <Button layoutX="370.0" layoutY="9.0" mnemonicParsing="false" onAction="#umMoveLike" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: #00000000;" />
+      <ImageView fitHeight="82.0" fitWidth="440.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/banner1.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

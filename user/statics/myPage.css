@@ -34,15 +34,24 @@ Button {
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 }
-#mpNotiView {
-	
-}
-#mpMythingBtn {
-	
-}
-#mpYourthingBtn {
+#mpMythingsBtn {
+	-fx-background-color: #8b6ab8;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: white;
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
+}
+#mpYourthingsBtn {
+	-fx-background-color: #8b6ab8;
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#mpNotiView {
+	
 }
 #mpBtnColor {
 	-fx-background-color: transparent;

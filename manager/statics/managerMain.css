@@ -1,51 +1,37 @@
 @font-face{
-   src:url(NanumBarunpenR.ttf);
+   src:url(NanmmBarunpenR.ttf);
 }
-#mtTopHbox {
+#mmtopHbox {
 	-fx-background-color: #6b3cab;
 }
-#mtTitle {
+#mmMoveUserHome {
 	-fx-text-fill: white;
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#mtBackColor {
+#mmBackColor {
 	-fx-background-color: #8b6ab8;
 }
-TestField {
-	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
-}
-Label {
-	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
-}
-Button {
-	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
-}
-#mtMythingLabel {
-	-fx-text-fill: #6b3cab;
-	-fx-alignment: center;
-	-fx-text-alignment: center;
-}
-#mtMoveMypageBtn {
+#mmBtnColor {
 	-fx-background-color: #8b6ab8;
-	-fx-background-radius: 20px;
-	-fx-border-radius: 20px;
-	-fx-text-fill: white;
+}
+#mmTotalLabel {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#mtEraseBtn {
-	-fx-background-color: #8b6ab8;
-	-fx-background-radius: 20px;
-	-fx-border-radius: 20px;
-	-fx-text-fill: white;
-	-fx-font-weight: bold;
+#mmTotal {
+	-fx-text-fill: black;
 	-fx-font-family: "나눔바른펜";
+}
+#mmEraseBtn {
+	-fx-background-color: transparent;
+	-fx-border-width: 5px;
+  	-fx-border-radius: 2px;
+  	-fx-text-fill: black;
+  	-fx-font-weight: bold;
+  	-fx-font-family: "나눔바른펜";
 }
 .table-view {
 	-fx-background-color: transparent;
@@ -53,16 +39,16 @@ Button {
 .table-view:focused {
 	-fx-background-color: transparent;
 }
-.table-view .column-header-background {
+.table-view .colmmn-header-background {
 	-fx-background-color: #8b6ab8;
 }
-.table-view .column-header-background .label {
+.table-view .colmmn-header-background .label {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
 	-fx-font-size: 14px;
 	-fx-font-family: "나눔바른펜";
 }
-.table-view .column-header {
+.table-view .colmmn-header {
 	-fx-background-color: #8b6ab8;
 }
 .table-view .table-cell {
@@ -80,54 +66,57 @@ Button {
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }
-#mtBtnColor {
-	-fx-background-color: #8b6ab8;
-}
-#mtBtn1 {
+#mmbtn1 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
+  	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
 }
-#mtBtn2 {
+#mmbtn2 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
+  	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
 }
-#mtBtn3 {
+#mmbtn3 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
+  	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
 }
-#mtBtn4 {
+#mmbtn4 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
+  	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
 }
-#mtBtn5 {
+#mmbtn5 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
+  	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
 }
-#mtBtn6 {
+#mmbtn6 {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
+  	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
 }
