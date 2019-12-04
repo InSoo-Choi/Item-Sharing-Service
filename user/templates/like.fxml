@@ -48,7 +48,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <AnchorPane prefHeight="90.0" prefWidth="440.0">
+            <AnchorPane fx:id="likeBackColor" prefHeight="90.0" prefWidth="440.0">
                <children>
                   <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -68,9 +68,9 @@
                   </HBox>
                </children>
             </AnchorPane>
-            <Line endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="440.0" text="내가 찜한 물품" />
-            <Line endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
+            <Line fx:id="likeLine1" endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
+            <Label fx:id="likeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="440.0" text="내가 찜한 물품" />
+            <Line fx:id="likeLine2" endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
             <AnchorPane prefHeight="481.0" prefWidth="442.0">
                <children>
                   <TableView layoutY="14.0" prefHeight="390.0" prefWidth="442.0">

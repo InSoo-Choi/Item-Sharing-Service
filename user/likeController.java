@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
 
 public class likeController {
 
@@ -22,6 +24,10 @@ public class likeController {
 	@FXML Button likeBtn6;
 	@FXML Label likeTitle;
 	@FXML HBox likeTopHbox;
+	@FXML AnchorPane likeBackColor;
+	@FXML Line likeLine1;
+	@FXML Label likeLabel;
+	@FXML Line likeLine2;
 
 	@FXML public void likemoveMyPage() throws Exception{
 		Stage primaryStage = new Stage();

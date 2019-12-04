@@ -11,6 +11,26 @@
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+#likeBackColor {
+	-fx-background-color: #8b6ab8;
+}
+Line {
+	-fx-stroke: #6b3cab;
+	-fx-stroke-width: 5px;
+}
+Label {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+Button {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#likeLabel {
+	-fx-text-fill: #6b3cab;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+}
 #likeBtnColor {
 	-fx-background-color: #8b6ab8;
 }
