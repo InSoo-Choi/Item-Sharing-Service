@@ -12,6 +12,13 @@
 	-fx-background-color: #07186e;
 	-fx-opacity: 0.75;
 }
+#ManagerLogin {
+	-fx-text-fill: white;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
 #inputManagerID {
 	-fx-border-color: linear-gradient(to left, #FA8C25, #F5119A);
 	-fx-border-radius: 20px;

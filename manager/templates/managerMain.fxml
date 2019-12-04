@@ -3,8 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -14,19 +12,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.managerController">
    <children>
-      <VBox layoutX="1.0" prefHeight="660.0" prefWidth="440.0">
+      <AnchorPane fx:id="mmBackColor" layoutY="32.0" prefHeight="179.0" prefWidth="450.0" />
+      <VBox prefHeight="660.0" prefWidth="446.0">
          <children>
-            <HBox prefHeight="34.0" prefWidth="440.0">
+            <HBox fx:id="mmTopHbox" prefHeight="27.0" prefWidth="422.0">
                <children>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="45.0" prefWidth="279.0" text="Item Sharing Service" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="mmMoveUserHome" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="45.0" prefWidth="279.0" text="Item Sharing Service" HBox.hgrow="ALWAYS" />
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -34,7 +32,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <AnchorPane prefHeight="160.0" prefWidth="440.0">
+            <AnchorPane prefHeight="201.0" prefWidth="431.0">
                <children>
                   <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -42,42 +40,39 @@
                         <Image url="@../../user/images/search_icon.png" />
                      </image>
                   </ImageView>
-                  <HBox layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
+                  <HBox fx:id="mmBtnColor" layoutX="1.0" layoutY="55.0" prefHeight="26.0" prefWidth="439.0">
                      <children>
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="전체" HBox.hgrow="ALWAYS" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기내용품" HBox.hgrow="ALWAYS" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="캐리어" HBox.hgrow="ALWAYS" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="카메라장비" HBox.hgrow="ALWAYS" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="생필품" HBox.hgrow="ALWAYS" />
-                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기타" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmBtn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="56.0" text="전체" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmBtn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기내용품" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmBtn3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="캐리어" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmBtn4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="카메라장비" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmBtn5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="생필품" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmBtn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기타" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <MenuButton layoutX="14.0" layoutY="91.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="146.0" text="정렬 방식">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="최신순" />
-                        <MenuItem mnemonicParsing="false" text="낮은가격순" />
-                        <MenuItem mnemonicParsing="false" text="높은가격순" />
-                        <MenuItem mnemonicParsing="false" text="좋아요순" />
-                     </items>
-                  </MenuButton>
-                  <HBox layoutX="18.0" layoutY="129.0" prefHeight="20.0" prefWidth="403.0">
+                  <HBox layoutX="14.0" layoutY="172.0" prefHeight="20.0" prefWidth="274.0">
                      <children>
-                        <Label maxHeight="1.7976931348623157E308" text="TOTAL  " HBox.hgrow="ALWAYS" />
-                        <Label maxHeight="1.7976931348623157E308" text="0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="mmTotalLabel" maxHeight="1.7976931348623157E308" text="TOTAL  " HBox.hgrow="ALWAYS" />
+                        <Label fx:id="mmTotal" maxHeight="1.7976931348623157E308" text="0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <Button layoutX="372.0" layoutY="91.0" mnemonicParsing="false" text="삭제" />
+                  <Button fx:id="mmEraseBtn" layoutX="378.0" layoutY="171.0" mnemonicParsing="false" text="삭제" />
                </children>
             </AnchorPane>
-            <TableView prefHeight="478.0" prefWidth="440.0">
+            <TableView prefHeight="415.0" prefWidth="414.0">
                <columns>
                   <TableColumn prefWidth="35.20001220703125" text="순번" />
                   <TableColumn prefWidth="231.199951171875" text="제목" />
                   <TableColumn prefWidth="70.40008544921875" text="작성자" />
-                  <TableColumn prefWidth="100.00006103515625" text="최대대여가능일" />
+                  <TableColumn prefWidth="107.19998779296873" text="최대대여가능일" />
                </columns>
             </TableView>
          </children>
       </VBox>
+      <ImageView fitHeight="81.0" fitWidth="446.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../user/images/banner1.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
