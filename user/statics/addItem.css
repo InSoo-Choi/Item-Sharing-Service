@@ -4,10 +4,26 @@
 #aiTopHbox {
 	-fx-background-color: #6b3cab;
 }
-#aiMoveUserHome {
+#aiTitle {
 	-fx-text-fill: white;
 	-fx-alignment: center;
 	-fx-text-alignment: center;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#aiBackColor {
+	-fx-background-color: #8b6ab8;
+}
+Label {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+Button {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#contents {
+	-fx-alignment: center;
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
