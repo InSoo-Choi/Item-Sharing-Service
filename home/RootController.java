@@ -11,9 +11,7 @@ import java.net.Socket;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
-import database.DBMembers;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,10 +24,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
-import javafx.scene.text.Text;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -75,7 +70,7 @@ public class RootController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		if(!MyInfo.socketConnect) {
-		final String SERVER_IP = "172.30.1.38";
+		final String SERVER_IP = "192.168.1.190";
 		final int SERVER_PORT = 8080;
 		
         socket = new Socket();
@@ -170,8 +165,7 @@ public class RootController implements Initializable {
 	}
 	
 	@FXML public void ManagerLogin(ActionEvent event) throws Exception {
-		
-		String PWfromDB = database.DBManagers.managers_load(inputManagerID.getText());
+		socket = MyInfo.socket;
 		
 		if(inputManagerPW.getText().equals("")) {
 			Alert loginFail = new Alert(AlertType.ERROR);
@@ -179,7 +173,25 @@ public class RootController implements Initializable {
 			loginFail.setContentText("Pleas input ID or Password");
 			loginFail.showAndWait();
 		}
-		else if(PWfromDB.equals(inputManagerPW.getText())) {
+		
+		//socket login
+		String passwordDB = null;
+        try {
+           String m = "MLogIn:" + inputManagerID.getText();
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+          passwordDB = br.readLine();
+          
+          
+        } catch (IOException e1) {
+           e1.printStackTrace();
+        }
+		
+		if(passwordDB.equals(inputManagerPW.getText())) {
 			System.out.println("login success");
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage)managerOK.getScene().getWindow();
@@ -231,7 +243,7 @@ public class RootController implements Initializable {
         pw.println(m);
         pw.flush();
         
-        Alert noCheckID = new Alert(AlertType.CONFIRMATION);
+        Alert noCheckID = new Alert(AlertType.INFORMATION);
 		noCheckID.setHeaderText("Register success");
 		noCheckID.setContentText("Now, you can login");
 		noCheckID.showAndWait();

@@ -68,7 +68,7 @@ public class DBItems {
         Statement stmt = null;
         ResultSet rs = null;
         
-        ObservableList<ObservableList<String>> ItemList = FXCollections.observableArrayList();
+        ObservableList<ObservableList> ItemList = FXCollections.observableArrayList();
         
         try {
         	conn = DBconnect.connect();
@@ -147,6 +147,4 @@ public class DBItems {
         
         return itemRow;
 	}
-	
 }
-
