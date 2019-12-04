@@ -34,6 +34,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.AnchorPane;
 
 public class addItemController implements Initializable {
 
@@ -53,6 +54,8 @@ public class addItemController implements Initializable {
 	@FXML Button aiBtn6;
 
 	Socket socket = null;
+	@FXML Label aiTitle;
+	@FXML AnchorPane aiBackColor;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

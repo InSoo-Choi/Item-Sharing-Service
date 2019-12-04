@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="user.addItemController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.addItemController">
    <children>
       <VBox prefHeight="660.0" prefWidth="440.0">
          <children>
-            <HBox prefHeight="34.0" prefWidth="440.0">
+            <HBox fx:id="aiTopHbox" prefHeight="34.0" prefWidth="440.0">
                <children>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
@@ -29,7 +29,7 @@
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label fx:id="aiMoveUserHome" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="45.0" prefWidth="279.0" text="Item Sharing Service" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="aiTitle" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="45.0" prefWidth="279.0" text="Item Sharing Service" HBox.hgrow="ALWAYS" />
                   <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/cart_icon.png" />
@@ -48,7 +48,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <AnchorPane prefHeight="111.0" prefWidth="440.0">
+            <AnchorPane fx:id="aiBackColor" prefHeight="111.0" prefWidth="440.0">
                <children>
                   <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
                   <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
