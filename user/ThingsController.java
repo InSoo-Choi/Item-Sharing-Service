@@ -10,6 +10,10 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
 
 public class ThingsController {
 
@@ -35,6 +39,21 @@ public class ThingsController {
 	@FXML Button ytMoveUserHome;
 	@FXML Label mtTitle;
 	@FXML Label ytTitle;
+	@FXML AnchorPane mtBackColor;
+	@FXML Line mtLine1;
+	@FXML Label mtMythingLabel;
+	@FXML Line mtLine2;
+	@FXML Line ytLine1;
+	@FXML Label ytYourthingsLabel;
+	@FXML Line ytLine2;
+	@FXML TableView ytListTable;
+	@FXML TableColumn categoryCol;
+	@FXML TableColumn titleCol;
+	@FXML TableColumn rentCol;
+	@FXML TableColumn maxCol;
+	@FXML TableColumn moneyCol;
+	@FXML TableColumn likeCol;
+	@FXML AnchorPane ytBackColor;
 
 	@FXML public void myThingsmoveUserHome() throws Exception {
 		

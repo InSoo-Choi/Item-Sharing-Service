@@ -34,11 +34,15 @@ Button {
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 }
+#mpNotiView {
+	
+}
 #mpMythingBtn {
 	
 }
 #mpYourthingBtn {
-	
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
 }
 #mpBtnColor {
 	-fx-background-color: transparent;
