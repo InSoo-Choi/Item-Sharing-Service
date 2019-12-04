@@ -11,6 +11,59 @@
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+#mtBackColor {
+	-fx-background-color: #8b6ab8;
+}
+Line {
+	-fx-stroke: #6b3cab;
+	-fx-stroke-width: 5px;
+}
+Label {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+Button {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+#ytYourthingLabel {
+	-fx-text-fill: #6b3cab;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+}
+.table-view {
+	-fx-background-color: transparent;
+}
+.table-view:focused {
+	-fx-background-color: transparent;
+}
+.table-view .column-header-background {
+	-fx-background-color: #8b6ab8;
+}
+.table-view .column-header-background .label {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
+}
+.table-view .column-header {
+	-fx-background-color: #8b6ab8;
+}
+.table-view .table-cell {
+	-fx-text-fill: black;
+	-fx-font-size: 14px;
+	-fx-font-family: "나눔바른펜";
+}
+.table-row-cell {
+	-fx-background-color: transparent;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-padding: 0.0em;
+}
+.table-row-cell:selected {
+    -fx-background-color: -fx-table-cell-border-color, #8b6ab8;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
 #ytBtnColor {
 	-fx-background-color: #8b6ab8;
 }

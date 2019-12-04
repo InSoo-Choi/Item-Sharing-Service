@@ -104,7 +104,7 @@
             <Line fx:id="mpLine4" endX="346.492919921875" endY="0.5575693249702454" startX="-100.0" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ListView layoutY="11.0" prefHeight="176.0" prefWidth="442.0" />
+                  <ListView fx:id="mpNotiView" layoutY="11.0" prefHeight="176.0" prefWidth="442.0" />
                </children>
             </AnchorPane>
          </children>
