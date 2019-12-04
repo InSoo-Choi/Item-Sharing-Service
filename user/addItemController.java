@@ -1,6 +1,13 @@
 package user;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -8,6 +15,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 import database.DBItems;
+import home.MyInfo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -44,9 +52,11 @@ public class addItemController implements Initializable {
 	@FXML Button aiBtn5;
 	@FXML Button aiBtn6;
 
+	Socket socket = null;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		ObservableList<String> kindsList = FXCollections.observableArrayList("湲곕궡�슜�뭹","罹먮━�뼱", "移대찓�씪 �옣鍮�", "�깮�븘�뭹", "湲고�");
+		ObservableList<String> kindsList = FXCollections.observableArrayList("기내용품","캐리어", "카메라장비", "생필품", "기타");
 		kinds.setItems(kindsList);
 	}
 
@@ -64,15 +74,26 @@ public class addItemController implements Initializable {
 		if(name == null || kind == null || date == null || perDayPrice == null || content == null) {
 			Alert emptyError = new Alert(AlertType.ERROR);
 			emptyError.setHeaderText("Empty error");
-			emptyError.setContentText("�옉�꽦�릺吏��븡�� �빆紐⑹씠 �엳�뒿�땲�떎. �떎�떆 �솗�씤�빐二쇱꽭�슂.");
+			emptyError.setContentText("빈 항목을 작성해주세요.");
 			emptyError.showAndWait();
 		}
 		else {
-			DBItems.add(name, kind, postByID, content, perDayPrice, date);
+			socket = MyInfo.socket;
 			
-			Alert addNotification = new Alert(AlertType.CONFIRMATION);
+	        try {
+	           String m = "addItem:" + name+":"+kind+":"+postByID+":"+content+":"+perDayPrice+":"+date;
+	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+	           
+	           pw.println(m);
+	           pw.flush();
+	          
+	        } catch (IOException e1) {
+	           e1.printStackTrace();
+	        }
+			
+			Alert addNotification = new Alert(AlertType.INFORMATION);
 			addNotification.setHeaderText("Success");
-			addNotification.setContentText("寃뚯떆湲� �벑濡앹씠 �셿猷뚮릺�뿀�뒿�땲�떎.");
+			addNotification.setContentText("등록에 성공하였습니다.");
 			addNotification.showAndWait();
 			
 			Stage primaryStage = new Stage();
