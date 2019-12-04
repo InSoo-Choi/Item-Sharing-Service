@@ -8,7 +8,7 @@ public class MyInfo {
 	public static String my_id;
 	public static String my_phone;
 	public static boolean socketConnect = false;
-	public static Socket socket = null;
+	public static Socket socket;
 	
 	public static void setName(String names) {
 		my_name = names;
@@ -36,10 +36,6 @@ public class MyInfo {
 	
 	public String getPhone() {
 		return my_phone;
-	}
-	
-	public Socket getSocket() {
-		return socket;
 	}
 	
 	public static void setSocket(Socket s) {

@@ -1,10 +1,16 @@
 package user;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
 
-import database.DBMembers;
+import home.MyInfo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,7 +30,7 @@ public class MyPageController implements Initializable {
 	@FXML Label mypage_id;
 	@FXML Label mypage_phone;
 	
-	static String[] mypage_info = DBMembers.load_myInfo(my_id);
+//	static String[] mypage_info = DBMembers.load_myInfo(my_id);
 	@FXML HBox mpTopHbox;
 	@FXML HBox mpBtnColor;
 	@FXML Button mpBtn1;
@@ -38,14 +44,52 @@ public class MyPageController implements Initializable {
 
 	
 	void init() {
-		mypage_id.setText(my_id);
-		mypage_name.setText(mypage_info[0]);
-		mypage_phone.setText(mypage_info[1]);
+		Socket socket = MyInfo.socket;
+		
+		
+        try {
+           String m = "myInfo:" + my_id;
+           
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           String information = br.readLine();
+           
+           System.out.println(information);
+           
+           mypage_id.setText(my_id);
+//   			mypage_name.setText(information[0]);
+//   			mypage_phone.setText(information[1]);
+          
+        } catch (IOException e1) {
+           e1.printStackTrace();
+        }
 	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		init();
+		Socket socket = MyInfo.socket;
+		
+        try {
+           String m = "myInfo:" + my_id;
+           
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           String[] information = br.readLine().split(":");
+           System.out.println(information);
+           
+           mypage_id.setText(my_id);
+   			mypage_name.setText(information[0]);
+   			mypage_phone.setText(information[1]);
+          
+        } catch (IOException e1) {
+           e1.printStackTrace();
+        }
 		
 	}
 
