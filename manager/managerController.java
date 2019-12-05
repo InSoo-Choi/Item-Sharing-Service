@@ -30,30 +30,50 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 
 public class managerController implements Initializable{
-
-	@FXML HBox mmTopHbox;
-	@FXML Label mmMoveUserHome;
-	@FXML HBox mmBtnColor;
-	@FXML Button mmBtn1;
-	@FXML Button mmBtn2;
-	@FXML Button mmBtn3;
-	@FXML Button mmBtn4;
-	@FXML Button mmBtn5;
-	@FXML Button mmBtn6;
-	@FXML Label mmTotalLabel;
-	@FXML Label mmTotal;
-	@FXML Button mmEraseBtn;
-	@FXML AnchorPane mmBackColor;
-	@FXML TableView<ObservableList> mmItemListTable;
-	@FXML TableColumn nameCol;
-	@FXML TableColumn idCol;
-	@FXML TableColumn priceCol;
 	
 	ObservableList<ObservableList> mylist = FXCollections.observableArrayList();
 	
 	Socket socket;
 	@FXML TableColumn nCol;
 	@FXML Button mmNoticeBtn;
+
+	@FXML AnchorPane mmBackColor;
+
+	@FXML HBox mmtopHbox;
+
+	@FXML Label mmMoveUserHome;
+
+	@FXML HBox umBtnColor;
+
+	@FXML Button mmbtn1;
+
+	@FXML Button mmbtn2;
+
+	@FXML Button mmbtn3;
+
+	@FXML Button mmbtn4;
+
+	@FXML Button mmbtn5;
+
+	@FXML Button mmbtn6;
+
+	@FXML Label mmTotalLabel;
+
+	@FXML Label mmNumTotal;
+
+	@FXML TableView<ObservableList> mmItemListTable;
+
+	@FXML TableColumn mmNameCol;
+
+	@FXML TableColumn mmIdCol;
+
+	@FXML TableColumn mmPriceCol;
+
+	@FXML Button umMoveMypage_Btn;
+
+	@FXML Button mmEraseBtn;
+
+	@FXML Label managerTitle;
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -99,19 +119,19 @@ public class managerController implements Initializable{
                }                    
            });
            
-           nameCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+           mmNameCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(1).toString());                        
                }                    
            });
    			
-           idCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+           mmIdCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(3).toString());                        
                }                    
            });
            
-           priceCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+           mmPriceCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(5).toString());                        
                }                    
@@ -123,6 +143,23 @@ public class managerController implements Initializable{
         }
 
 	}
+
+	@FXML public void managerErase() {
+		socket = MyInfo.socket;
+		String[] rowData = mmItemListTable.getSelectionModel().getSelectedItem().toString().split(",");
+		try {
+	           String m = "deleteData:"+rowData[0].substring(1);
+	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+	           
+	           pw.println(m);
+	           pw.flush();
+	           
+		} catch (IOException e1) {
+	        e1.printStackTrace();
+	     }
+		
+	}
+	
 	
 
 }

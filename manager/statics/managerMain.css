@@ -1,18 +1,16 @@
 @font-face{
    src:url(NanumBarunpenR.ttf);
 }
-#mmTopHbox {
+#mmtopHbox {
 	-fx-background-color: #6b3cab;
-}
-#mmMoveUserHome {
-	-fx-text-fill: white;
-	-fx-alignment: center;
-	-fx-text-alignment: center;
-	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #mmBackColor {
 	-fx-background-color: #8b6ab8;
+}
+#managerTitle {
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-font-family: "나눔바른펜";
 }
 #mmBtnColor {
 	-fx-background-color: #8b6ab8;
@@ -21,7 +19,7 @@
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#mmTotal {
+#mmNumTotal {
 	-fx-text-fill: black;
 	-fx-font-family: "나눔바른펜";
 }
@@ -41,7 +39,7 @@ Button {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#mmNotiveBtn {
+#mmNoticeBtn {
 	-fx-background-color: transparent;
 }
 .table-view {
