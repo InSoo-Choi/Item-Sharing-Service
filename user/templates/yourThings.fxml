@@ -75,11 +75,12 @@
                <children>
                   <TableView fx:id="ytItemListTable" layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
                      <columns>
-                        <TableColumn fx:id="your_category" prefWidth="74.39996182918549" text="물품종류" />
-                        <TableColumn fx:id="your_name" prefWidth="154.40003204345703" text="제목" />
-                        <TableColumn fx:id="your_max" prefWidth="116.0" text="최대대여가능일" />
-                        <TableColumn fx:id="your_price" prefWidth="64.0" text="하루가격" />
-                        <TableColumn fx:id="your_like" prefWidth="35.20001220703125" text="♥" />
+                        <TableColumn fx:id="your_id" prefWidth="30.39996373653412" text="ID" />
+                        <TableColumn fx:id="your_category" prefWidth="84.0" text="물품종류" />
+                        <TableColumn fx:id="your_name" prefWidth="130.40009307861328" text="제목" />
+                        <TableColumn fx:id="your_max" prefWidth="104.800048828125" text="최대대여가능일" />
+                        <TableColumn fx:id="your_price" prefWidth="61.60003662109375" text="하루가격" />
+                        <TableColumn fx:id="your_like" prefWidth="31.99993896484375" text="♥" />
                      </columns>
                   </TableView>
                   <HBox layoutY="418.0" prefHeight="28.0" prefWidth="442.0">

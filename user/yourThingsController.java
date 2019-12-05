@@ -63,6 +63,8 @@ public class yourThingsController implements Initializable{
 	@FXML TableColumn your_price;
 	@FXML TableColumn your_like;
 
+	@FXML TableColumn your_id;
+
 	
 	@SuppressWarnings("unchecked")
 	@Override
