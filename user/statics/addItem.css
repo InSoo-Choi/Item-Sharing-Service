@@ -22,6 +22,9 @@ Button {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+#aiNotiveBtn {
+	-fx-background-color: transparent;
+}
 #aiMoveUserHomeBtn {
 	-fx-background-color: #8b6ab8;
 	-fx-background-radius: 20px;

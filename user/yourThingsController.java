@@ -29,6 +29,8 @@ public class yourThingsController {
 	@FXML Button ytReturnBtn;
 	@FXML Button yourThingsmoveMypage_Btn;
 	@FXML Button ytMoveUserHome;
+	@FXML Button ytNoticeBtn;
+	@FXML Button ytMoveMypageBtn;
 
 	@FXML public void yourThingsmoveMyPage() throws Exception {
 		

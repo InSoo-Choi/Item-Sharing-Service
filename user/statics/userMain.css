@@ -33,6 +33,13 @@
   	-fx-font-weight: bold;
   	-fx-font-family: "나눔바른펜";
 }
+#umNotiveBtn {
+	-fx-background-color: transparent;
+}
+Label {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
 .table-view {
 	-fx-background-color: transparent;
 }

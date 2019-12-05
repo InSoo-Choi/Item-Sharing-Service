@@ -21,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 public class postController implements Initializable {
 
@@ -51,6 +52,8 @@ public class postController implements Initializable {
 	@FXML Button sopRentBtn;
 
 	Socket socket;
+	@FXML AnchorPane sopBackColor;
+	@FXML Button sopNoticeBtn;
 	
 	@FXML public void showonepostmoveMyPage() throws Exception{
 		 	Stage primaryStage = new Stage();
