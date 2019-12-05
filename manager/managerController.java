@@ -42,49 +42,47 @@ public class managerController implements Initializable{
 	Socket socket;
 	@FXML TableColumn nCol;
 	@FXML Button mmNoticeBtn;
-
 	@FXML AnchorPane mmBackColor;
-
 	@FXML HBox mmtopHbox;
-
 	@FXML Label mmMoveUserHome;
-
-	@FXML HBox umBtnColor;
-
 	@FXML Button mmbtn1;
-
 	@FXML Button mmbtn2;
-
 	@FXML Button mmbtn3;
-
 	@FXML Button mmbtn4;
-
 	@FXML Button mmbtn5;
-
 	@FXML Button mmbtn6;
-
 	@FXML Label mmTotalLabel;
-
 	@FXML Label mmNumTotal;
-
 	@FXML TableView<ObservableList> mmItemListTable;
-
 	@FXML TableColumn mmNameCol;
-
 	@FXML TableColumn mmIdCol;
-
 	@FXML TableColumn mmPriceCol;
-
-	@FXML Button umMoveMypage_Btn;
-
 	@FXML Button mmEraseBtn;
-
 	@FXML Label managerTitle;
+	@FXML TableColumn mmRentCol;
+	@FXML HBox mmBtnColor;
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		socket = MyInfo.socket;
+		
+		String cnt = null;
+		try {
+	           String m = "itemsCnt:";
+	           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+	           
+	           pw.println(m);
+	           pw.flush();
+	           
+	          cnt = br.readLine();
+	          
+	          mmNumTotal.setText(cnt);
+	          
+	        } catch (IOException e1) {
+	           e1.printStackTrace();
+	        }
 		
 		String myList = null;
 		String[] temp = null;
@@ -137,6 +135,12 @@ public class managerController implements Initializable{
                }                    
            });
            
+           mmRentCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(7).toString());                        
+               }                    
+           });
+           
            mmPriceCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(5).toString());                        
@@ -153,9 +157,15 @@ public class managerController implements Initializable{
 	@FXML public void managerErase() {
 		socket = MyInfo.socket;
 		String[] rowData = mmItemListTable.getSelectionModel().getSelectedItem().toString().split(",");
-		try {
-	           String m = "deleteData:"+rowData[0].substring(1);
-	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+		if(rowData[7].substring(1, 2).equals("1")) {
+     	   Alert eraseSuccess = new Alert(AlertType.ERROR);
+	           eraseSuccess.setHeaderText("Erase Fail");
+	           eraseSuccess.setContentText("Please select things not rented");
+	           eraseSuccess.showAndWait();
+        }else {
+        	try {
+        		String m = "deleteData:"+rowData[0].substring(1);
+        		PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
 	           
 	           pw.println(m);
 	           pw.flush();
@@ -174,10 +184,11 @@ public class managerController implements Initializable{
 	   	        primaryStage.show();
 	   			stage.close();
 	           
-		} catch (IOException e1) {
-	        e1.printStackTrace();
-	     }
-		
+        	} catch (IOException e1) {
+        		e1.printStackTrace();
+        	}
+        	
+        }
 	}
 	
 	

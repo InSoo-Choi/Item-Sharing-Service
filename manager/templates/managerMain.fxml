@@ -43,7 +43,7 @@
             </HBox>
             <AnchorPane prefHeight="220.0" prefWidth="440.0">
                <children>
-                  <HBox fx:id="umBtnColor" layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
+                  <HBox fx:id="mmBtnColor" layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
                      <children>
                         <Button fx:id="mmbtn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="전체" HBox.hgrow="ALWAYS" />
                         <Button fx:id="mmbtn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기내용품" HBox.hgrow="ALWAYS" />
@@ -71,10 +71,11 @@
             </AnchorPane>
             <TableView fx:id="mmItemListTable" prefHeight="416.0" prefWidth="440.0">
                <columns>
-                  <TableColumn fx:id="nCol" prefWidth="60.0" text="순번" />
-                  <TableColumn fx:id="mmNameCol" prefWidth="174.4000244140625" text="제목" />
-                  <TableColumn fx:id="mmIdCol" prefWidth="115.199951171875" text="작성자" />
-                  <TableColumn fx:id="mmPriceCol" prefWidth="92.0" text="하루가격" />
+                  <TableColumn fx:id="nCol" prefWidth="36.800048828125" text="순번" />
+                  <TableColumn fx:id="mmNameCol" prefWidth="173.5999755859375" text="제목" />
+                  <TableColumn fx:id="mmIdCol" prefWidth="85.5999755859375" text="작성자" />
+                  <TableColumn fx:id="mmRentCol" prefWidth="48.79998779296875" text="대여" />
+                  <TableColumn fx:id="mmPriceCol" prefWidth="95.20001220703125" text="하루가격" />
                </columns>
             </TableView>
          </children>
