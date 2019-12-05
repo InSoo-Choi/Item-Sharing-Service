@@ -16,6 +16,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,11 +25,13 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableColumn;
 
@@ -62,7 +65,6 @@ public class yourThingsController implements Initializable{
 	@FXML TableColumn your_max;
 	@FXML TableColumn your_price;
 	@FXML TableColumn your_like;
-
 	@FXML TableColumn your_id;
 
 	
@@ -84,8 +86,6 @@ public class yourThingsController implements Initializable{
            myList = br.readLine();
            temp = myList.split("//");
            
-           System.out.println(Arrays.deepToString(temp));
-           
            if(Arrays.deepToString(temp).equals("[]")) {
 
         	   ytItemListTable.setItems(null);
@@ -104,33 +104,39 @@ public class yourThingsController implements Initializable{
            
            ytItemListTable.setItems(mylist);
            
-           your_category.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+           your_id.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(0).toString());                        
                }                    
            });
            
-           your_name.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+           your_category.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(1).toString());                        
+               }                    
+           });
+           
+           your_name.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(2).toString());                        
                }                    
            });
    			
            your_max.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(2).toString());                        
+                   return new SimpleStringProperty(param.getValue().get(3).toString());                        
                }                    
            });
            
            your_price.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(3).toString());                        
+                   return new SimpleStringProperty(param.getValue().get(4).toString());                        
                }                    
            });	
            
            your_like.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(4).toString());                        
+                   return new SimpleStringProperty(param.getValue().get(5).toString());                        
                }                    
            });	
            
@@ -177,6 +183,37 @@ public class yourThingsController implements Initializable{
 			primaryStage.setScene(sc);
 	        primaryStage.show();
 			stage.close();
-	};
-
+	}
+	
+	@FXML public void returnAction(ActionEvent event) {
+		socket = MyInfo.socket;
+		
+		String[] rowData = ytItemListTable.getSelectionModel().getSelectedItem().toString().split(",");
+		try {
+	           String m = "returnItem:"+rowData[0].substring(1);
+	           System.out.println(m);
+	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+	           
+	           pw.println(m);
+	           pw.flush();
+	           
+	           Alert eraseSuccess = new Alert(AlertType.INFORMATION);
+	           eraseSuccess.setHeaderText("삐빅!");
+	           eraseSuccess.setContentText("반납이 완료되었습니다!");
+	           eraseSuccess.showAndWait();
+	           
+	           Stage primaryStage = new Stage();
+	   			Stage stage = (Stage)ytTitle.getScene().getWindow();
+	   			Parent ob = FXMLLoader.load(getClass().getResource("templates/yourThings.fxml"));
+	   			ob.getStylesheets().add(getClass().getResource("statics/yourThings.css").toExternalForm());
+	   			Scene sc = new Scene(ob);
+	   			primaryStage.setScene(sc);
+	   	        primaryStage.show();
+	   			stage.close();
+	           
+		} catch (IOException e1) {
+	        e1.printStackTrace();
+	     }
+}
+	
 }
