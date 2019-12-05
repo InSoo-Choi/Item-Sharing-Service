@@ -64,6 +64,8 @@ public class UserMainController implements Initializable {
 	@FXML Label numTotal;
 	
 	Socket socket;
+	@FXML TableColumn rentCol;
+	@FXML Button umNoticeBtn;
 
 	@FXML public void moveMyPage() throws Exception {
 		Stage primaryStage = new Stage();
@@ -161,6 +163,12 @@ public class UserMainController implements Initializable {
             public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                 return new SimpleStringProperty(param.getValue().get(3).toString());                        
             }                    
+        });
+		
+		rentCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(7).toString());                        
+            }
         });
 		
 		limitCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
