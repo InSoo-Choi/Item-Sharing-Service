@@ -70,6 +70,7 @@ public class ThingsController implements Initializable {
 	@FXML TableColumn my_price;
 	@FXML TableColumn my_like;
 	@FXML Button mtNoticeBtn;
+	@FXML TableColumn my_num;
 	
 	@FXML public void myThingsmoveUserHome() throws Exception {
 		
@@ -116,7 +117,7 @@ public class ThingsController implements Initializable {
 		String myList = null;
 		String[] temp = null;
         try {
-           String m = "MyThings:"+MyInfo.my_id;
+           String m = "loadItemList:"+MyInfo.my_id;
            BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
            PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
            
@@ -143,9 +144,15 @@ public class ThingsController implements Initializable {
            
            myThingsList.setItems(mylist);
            
-           my_kinds.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+           my_num.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(0).toString());                        
+               }                    
+           });
+           
+           my_kinds.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(2).toString());                        
                }                    
            });
    			
@@ -157,25 +164,25 @@ public class ThingsController implements Initializable {
            
            my_state.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(2).toString());                        
+                   return new SimpleStringProperty(param.getValue().get(7).toString());                        
                }                    
            });
            
            my_limit.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(3).toString());                        
+                   return new SimpleStringProperty(param.getValue().get(4).toString());                        
                }                    
            });
            
            my_price.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(4).toString());                        
+                   return new SimpleStringProperty(param.getValue().get(5).toString());                        
                }                    
            });
 
            my_like.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(5).toString());                        
+                   return new SimpleStringProperty(param.getValue().get(6).toString());                        
                }                    
            });
    		

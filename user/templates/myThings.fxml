@@ -75,12 +75,13 @@
                <children>
                   <TableView fx:id="myThingsList" layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
                     <columns>
-                      <TableColumn fx:id="my_kinds" prefWidth="59.99999922513962" text="물품종류" />
-                      <TableColumn fx:id="my_title" prefWidth="131.20001602172852" text="제목" />
-                        <TableColumn fx:id="my_state" prefWidth="64.79997253417969" text="대여여부" />
-                        <TableColumn fx:id="my_limit" prefWidth="92.0" text="최대대여가능일" />
-                        <TableColumn fx:id="my_price" prefWidth="49.60003662109375" text="가격" />
-                        <TableColumn fx:id="my_like" prefWidth="47.199951171875" text="♥" />
+                        <TableColumn fx:id="my_num" prefWidth="37.59997481107712" text="순번" />
+                      <TableColumn fx:id="my_kinds" prefWidth="67.20001602172852" text="물품종류" />
+                      <TableColumn fx:id="my_title" prefWidth="116.00006103515625" text="제목" />
+                        <TableColumn fx:id="my_state" prefWidth="39.19999694824219" text="대여" />
+                        <TableColumn fx:id="my_limit" prefWidth="104.800048828125" text="최대대여가능일" />
+                        <TableColumn fx:id="my_price" prefWidth="43.199951171875" text="가격" />
+                        <TableColumn fx:id="my_like" prefWidth="30.4000244140625" text="♥" />
                     </columns>
                   </TableView>
                   <HBox layoutY="418.0" prefHeight="28.0" prefWidth="442.0">

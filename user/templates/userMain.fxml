@@ -46,7 +46,7 @@
                      </HBox.margin>
                   </ImageView>
                </children></HBox>
-            <AnchorPane prefHeight="199.0" prefWidth="440.0">
+            <AnchorPane prefHeight="240.0" prefWidth="440.0">
                <children>
                   <HBox fx:id="umBtnColor" layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
                      <children>
@@ -74,13 +74,14 @@
                   <Button fx:id="umNoticeBtn" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
-            <TableView fx:id="itemListTable" prefHeight="416.0" prefWidth="440.0">
+            <TableView fx:id="itemListTable" prefHeight="430.0" prefWidth="440.0">
               <columns>
-                <TableColumn fx:id="nameCol" prefWidth="127.99999696016312" text="제목" />
-                <TableColumn fx:id="idCol" text="작성자" />
-                  <TableColumn fx:id="limitCol" prefWidth="113.60005187988281" text="최대대여가능일" />
+                <TableColumn fx:id="nameCol" prefWidth="118.4000244140625" text="제목" />
+                <TableColumn fx:id="idCol" prefWidth="70.4000244140625" text="작성자" />
+                  <TableColumn fx:id="rentCol" prefWidth="36.0" text="대여" />
+                  <TableColumn fx:id="limitCol" prefWidth="111.99993896484375" text="최대대여가능일" />
                   <TableColumn fx:id="priceCol" prefWidth="72.00006103515625" text="하루가격" />
-                  <TableColumn fx:id="likeCol" prefWidth="44.7999267578125" text="♥" />
+                  <TableColumn fx:id="likeCol" prefWidth="32.0" text="♥" />
               </columns>
             </TableView>
          </children>
