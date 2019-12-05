@@ -12,15 +12,18 @@ import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
 
 import home.MyInfo;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
 public class postController implements Initializable {
@@ -49,11 +52,11 @@ public class postController implements Initializable {
 	@FXML Label sopMoney;
 	@FXML Button sopLikeBtn;
 	@FXML Button sopMoveUserHomeBtn;
-	@FXML Button sopRentBtn;
 
 	Socket socket;
 	@FXML AnchorPane sopBackColor;
 	@FXML Button sopNoticeBtn;
+	@FXML Button sopRentBtn;
 	
 	@FXML public void showonepostmoveMyPage() throws Exception{
 		 	Stage primaryStage = new Stage();
@@ -88,6 +91,45 @@ public class postController implements Initializable {
 	        primaryStage.show();
 			stage.close();
 	}
+	
+	@FXML public void rent_button(ActionEvent event) throws Exception {
+		
+		if(idOutput.getText().equals(MyInfo.my_id)) {
+			Alert sameID = new Alert(AlertType.ERROR);
+			sameID.setHeaderText("삐빅");
+			sameID.setContentText("본인의 물건은 대여할 수 없습니다!");
+			sameID.showAndWait();
+		}
+		
+		else {
+		socket = MyInfo.socket;
+	
+        try {
+           String m = "rent:" + MyInfo.onePostNum+":"+MyInfo.my_id;
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           pw.println(m);
+           pw.flush();
+          
+        	} catch (IOException e1) {
+        		e1.printStackTrace();
+        }
+        Alert rentSuccess = new Alert(AlertType.INFORMATION);
+        rentSuccess.setHeaderText("삐빅");
+        rentSuccess.setContentText("대여완료 0_<");
+        rentSuccess.showAndWait();
+        
+        Stage primaryStage = new Stage();
+		Stage stage = (Stage)sopTitle.getScene().getWindow();
+
+			Parent ob = FXMLLoader.load(getClass().getResource("templates/userMain.fxml"));
+			ob.getStylesheets().add(getClass().getResource("statics/userMain.css").toExternalForm());
+			Scene sc = new Scene(ob);
+			primaryStage.setScene(sc);
+	        primaryStage.show();
+			stage.close();
+		}
+	}
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
