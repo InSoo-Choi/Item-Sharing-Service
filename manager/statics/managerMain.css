@@ -1,7 +1,7 @@
 @font-face{
-   src:url(NanmmBarunpenR.ttf);
+   src:url(NanumBarunpenR.ttf);
 }
-#mmtopHbox {
+#mmTopHbox {
 	-fx-background-color: #6b3cab;
 }
 #mmMoveUserHome {
@@ -32,6 +32,14 @@
   	-fx-text-fill: black;
   	-fx-font-weight: bold;
   	-fx-font-family: "나눔바른펜";
+}
+Label {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
+Button {
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
 }
 .table-view {
 	-fx-background-color: transparent;
