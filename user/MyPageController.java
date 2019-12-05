@@ -73,11 +73,7 @@ public class MyPageController implements Initializable {
            pw.flush();
            String information = br.readLine();
            
-           System.out.println(information);
-           
            mypage_id.setText(my_id);
-//   			mypage_name.setText(information[0]);
-//   			mypage_phone.setText(information[1]);
           
         } catch (IOException e1) {
            e1.printStackTrace();
@@ -97,7 +93,6 @@ public class MyPageController implements Initializable {
            pw.println(m);
            pw.flush();
            String[] information = br.readLine().split(":");
-           System.out.println(information);
            
            mypage_id.setText(my_id);
    			mypage_name.setText(information[0]);

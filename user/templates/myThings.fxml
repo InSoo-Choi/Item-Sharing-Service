@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.ThingsController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.ThingsController">
    <children>
       <VBox prefHeight="660.0" prefWidth="442.0">
          <children>
@@ -73,15 +73,14 @@
             <Line fx:id="mtLine2" endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
             <AnchorPane prefHeight="481.0" prefWidth="442.0">
                <children>
-                  <TableView layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
+                  <TableView fx:id="myThingsList" layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
                     <columns>
-                      <TableColumn prefWidth="59.99999922513962" text="물품종류" />
-                      <TableColumn prefWidth="131.20001602172852" text="제목" />
-                        <TableColumn prefWidth="64.79997253417969" text="대여여부" />
-                        <TableColumn prefWidth="92.0" text="최대대여가능일" />
-                        <TableColumn prefWidth="49.60003662109375" text="가격" />
-                        <TableColumn prefWidth="47.199951171875" text="♥" />
-                        <TableColumn prefWidth="75.0" text="Column X" />
+                      <TableColumn fx:id="my_kinds" prefWidth="59.99999922513962" text="물품종류" />
+                      <TableColumn fx:id="my_title" prefWidth="131.20001602172852" text="제목" />
+                        <TableColumn fx:id="my_state" prefWidth="64.79997253417969" text="대여여부" />
+                        <TableColumn fx:id="my_limit" prefWidth="92.0" text="최대대여가능일" />
+                        <TableColumn fx:id="my_price" prefWidth="49.60003662109375" text="가격" />
+                        <TableColumn fx:id="my_like" prefWidth="47.199951171875" text="♥" />
                     </columns>
                   </TableView>
                   <HBox layoutY="418.0" prefHeight="28.0" prefWidth="442.0">
