@@ -73,14 +73,13 @@
             <Line fx:id="ytLine2" endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
             <AnchorPane prefHeight="481.0" prefWidth="442.0">
                <children>
-                  <TableView layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
+                  <TableView fx:id="ytItemListTable" layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
                      <columns>
-                        <TableColumn prefWidth="59.99999922513962" text="물품종류" />
-                        <TableColumn prefWidth="118.40003204345703" text="제목" />
-                        <TableColumn prefWidth="71.199951171875" text="대여기간" />
-                        <TableColumn prefWidth="94.4000244140625" text="최대대여가능일" />
-                        <TableColumn prefWidth="53.60003662109375" text="가격" />
-                        <TableColumn prefWidth="47.199951171875" text="♥" />
+                        <TableColumn fx:id="your_category" prefWidth="74.39996182918549" text="물품종류" />
+                        <TableColumn fx:id="your_name" prefWidth="154.40003204345703" text="제목" />
+                        <TableColumn fx:id="your_max" prefWidth="116.0" text="최대대여가능일" />
+                        <TableColumn fx:id="your_price" prefWidth="64.0" text="하루가격" />
+                        <TableColumn fx:id="your_like" prefWidth="35.20001220703125" text="♥" />
                      </columns>
                   </TableView>
                   <HBox layoutY="418.0" prefHeight="28.0" prefWidth="442.0">

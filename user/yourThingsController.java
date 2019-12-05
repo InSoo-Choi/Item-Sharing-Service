@@ -1,7 +1,24 @@
 package user;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.ResourceBundle;
+
+import home.MyInfo;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -10,9 +27,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableColumn;
 
-public class yourThingsController {
+public class yourThingsController implements Initializable{
 
+	ObservableList<ObservableList> mylist = FXCollections.observableArrayList();
+	
+	Socket socket;
+	
 	@FXML HBox ytTopHbox;
 	@FXML Label ytTitle;
 	@FXML AnchorPane ytBackColor;
@@ -31,7 +56,88 @@ public class yourThingsController {
 	@FXML Button ytMoveUserHome;
 	@FXML Button ytNoticeBtn;
 	@FXML Button ytMoveMypageBtn;
+	@FXML TableView<ObservableList> ytItemListTable;
+	@FXML TableColumn your_category;
+	@FXML TableColumn your_name;
+	@FXML TableColumn your_max;
+	@FXML TableColumn your_price;
+	@FXML TableColumn your_like;
 
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		socket = MyInfo.socket;
+		
+		String myList = null;
+		String[] temp = null;
+        try {
+           String m = "YourThings:"+MyInfo.my_id;
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+           myList = br.readLine();
+           temp = myList.split("//");
+           
+           System.out.println(Arrays.deepToString(temp));
+           
+           if(Arrays.deepToString(temp).equals("[]")) {
+
+        	   ytItemListTable.setItems(null);
+        	   return;
+           }
+           
+           for(int i = 0; i < temp.length; i++) {
+        	   ObservableList<String> row = FXCollections.observableArrayList();
+        	  
+        	   String[] temp2 = temp[i].split("@@");
+        	   		for(int j = 0; j<temp2.length; j++) {
+        	   			row.add(temp2[j]);
+        	   }
+        	   	mylist.add(row);
+           }
+           
+           ytItemListTable.setItems(mylist);
+           
+           your_category.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(0).toString());                        
+               }                    
+           });
+           
+           your_name.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(1).toString());                        
+               }                    
+           });
+   			
+           your_max.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(2).toString());                        
+               }                    
+           });
+           
+           your_price.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(3).toString());                        
+               }                    
+           });	
+           
+           your_like.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(4).toString());                        
+               }                    
+           });	
+           
+           
+        } catch (IOException e1) {
+        	e1.printStackTrace();
+        }
+
+	}
 	@FXML public void yourThingsmoveMyPage() throws Exception {
 		
 		Stage primaryStage = new Stage();
