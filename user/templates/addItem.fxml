@@ -50,12 +50,6 @@
             </HBox>
             <AnchorPane fx:id="aiBackColor" prefHeight="111.0" prefWidth="440.0">
                <children>
-                  <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/search_icon.png" />
-                     </image>
-                  </ImageView>
                   <HBox fx:id="aiBtnColor" layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
                      <children>
                         <Button fx:id="aiBtn1" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="전체" HBox.hgrow="ALWAYS" />
@@ -66,6 +60,13 @@
                         <Button fx:id="aiBtn6" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기타" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="23.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/notice.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="52.0" layoutY="18.0" text="이용 관련 수칙이 궁금하시면 클릭해주세요" />
+                  <Button fx:id="aiNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="539.0" prefWidth="440.0">

@@ -59,6 +59,7 @@ public class addItemController implements Initializable {
 	@FXML HBox aiTopHbox;
 	@FXML Button aiMoveUserHomeBtn;
 	@FXML Button aiPostSubmitBtn;
+	@FXML Button aiNoticeBtn;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

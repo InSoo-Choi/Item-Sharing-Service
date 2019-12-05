@@ -35,7 +35,6 @@ import javafx.scene.control.TableColumn;
 public class ThingsController implements Initializable {
 
 	@FXML Button myThingsmoveMypage_Btn;
-	@FXML Button yourThingsmoveMypage_Btn;
 	@FXML HBox mtTopHbox;
 	@FXML HBox mtBtnColor;
 	@FXML Button mtBtn1;
@@ -45,34 +44,17 @@ public class ThingsController implements Initializable {
 	@FXML Button mtBtn5;
 	@FXML Button mtBtn6;
 	@FXML Button mtMoveUserHome;
-	@FXML HBox ytTopHbox;
-	@FXML HBox ytBtnColor;
-	@FXML Button ytBtn1;
-	@FXML Button ytBtn2;
-	@FXML Button ytBtn3;
-	@FXML Button ytBtn4;
-	@FXML Button ytBtn5;
-	@FXML Button ytBtn6;
-	@FXML Button ytMoveUserHome;
 	@FXML Label mtTitle;
-	@FXML Label ytTitle;
 	@FXML AnchorPane mtBackColor;
 	@FXML Line mtLine1;
 	@FXML Label mtMythingLabel;
 	@FXML Line mtLine2;
-	@FXML Line ytLine1;
-	@FXML Label ytYourthingsLabel;
-	@FXML Line ytLine2;
-	@FXML TableView ytListTable;
 	@FXML TableColumn categoryCol;
 	@FXML TableColumn titleCol;
 	@FXML TableColumn rentCol;
 	@FXML TableColumn maxCol;
 	@FXML TableColumn moneyCol;
 	@FXML TableColumn likeCol;
-	@FXML AnchorPane ytBackColor;
-	@FXML Button ytMoveMypageBtn;
-	@FXML Button ytReturnBtn;
 	@FXML Label mtMythingsLabel;
 	@FXML Button mtMoveMypageBtn;
 	@FXML Button mtEraseBtn;
@@ -87,6 +69,7 @@ public class ThingsController implements Initializable {
 	@FXML TableColumn my_limit;
 	@FXML TableColumn my_price;
 	@FXML TableColumn my_like;
+	@FXML Button mtNoticeBtn;
 	
 	@FXML public void myThingsmoveUserHome() throws Exception {
 		

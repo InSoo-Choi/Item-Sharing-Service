@@ -11,12 +11,23 @@
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+#mtMythingsLabel {
+	-fx-text-fill: #8b6ab8;
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+	-fx-font-weight: bold;
+	-fx-font-family: "나눔바른펜";
+}
 #mtBackColor {
 	-fx-background-color: #8b6ab8;
 }
 TestField {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
+}
+Line {
+	-fx-stroke: #6b3cab;
+	-fx-stroke-width: 5px;
 }
 Label {
 	-fx-font-weight: bold;
@@ -25,6 +36,9 @@ Label {
 Button {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
+}
+#mtNotiveBtn {
+	-fx-background-color: transparent;
 }
 #mtMythingLabel {
 	-fx-text-fill: #6b3cab;

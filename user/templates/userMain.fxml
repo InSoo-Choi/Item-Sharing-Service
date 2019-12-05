@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -49,12 +48,6 @@
                </children></HBox>
             <AnchorPane prefHeight="199.0" prefWidth="440.0">
                <children>
-                  <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/search_icon.png" />
-                     </image>
-                  </ImageView>
                   <HBox fx:id="umBtnColor" layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
                      <children>
                         <Button fx:id="umbtn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="전체" HBox.hgrow="ALWAYS" />
@@ -72,6 +65,13 @@
                      </children>
                   </HBox>
                   <Button fx:id="umAddBtn" layoutX="372.0" layoutY="171.0" mnemonicParsing="false" onAction="#moveAdd" text="글쓰기" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/notice.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="56.0" layoutY="18.0" text="이용 관련 수칙이 궁금하시면 클릭해주세요" />
+                  <Button fx:id="umNoticeBtn" layoutX="18.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
             <TableView fx:id="itemListTable" prefHeight="416.0" prefWidth="440.0">

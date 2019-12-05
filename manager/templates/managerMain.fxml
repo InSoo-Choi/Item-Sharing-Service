@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,12 +33,6 @@
             </HBox>
             <AnchorPane prefHeight="132.0" prefWidth="446.0">
                <children>
-                  <TextField layoutX="14.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="384.0" promptText="검색" />
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../user/images/search_icon.png" />
-                     </image>
-                  </ImageView>
                   <HBox fx:id="mmBtnColor" layoutX="1.0" layoutY="55.0" prefHeight="26.0" prefWidth="439.0">
                      <children>
                         <Button fx:id="mmBtn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="56.0" text="전체" HBox.hgrow="ALWAYS" />
@@ -57,13 +50,21 @@
                      </children>
                   </HBox>
                   <Button fx:id="mmEraseBtn" layoutX="378.0" layoutY="101.0" mnemonicParsing="false" text="삭제" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="23.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../user/images/notice.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="52.0" layoutY="18.0" text="이용 관련 수칙이 궁금하시면 클릭해주세요" />
+                  <Button fx:id="mmNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="274.0" />
                </children>
             </AnchorPane>
-            <TableView fx:id="mmItemListTable" prefHeight="483.0" prefWidth="446.0">
+            <TableView fx:id="mmItemListTable" prefHeight="483.0" prefWidth="431.0">
                <columns>
-                  <TableColumn fx:id="nameCol" prefWidth="231.199951171875" text="제목" />
-                  <TableColumn fx:id="idCol" prefWidth="70.40008544921875" text="작성자" />
-                  <TableColumn fx:id="priceCol" prefWidth="143.19998779296873" text="하루가격" />
+                  <TableColumn fx:id="nCol" prefWidth="51.20001143217087" text="순번" />
+                  <TableColumn fx:id="nameCol" prefWidth="173.60004043579102" text="제목" />
+                  <TableColumn fx:id="idCol" prefWidth="103.99998474121094" text="작성자" />
+                  <TableColumn fx:id="priceCol" prefWidth="115.19998779296873" text="하루가격" />
                </columns>
             </TableView>
          </children>
