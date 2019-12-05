@@ -136,7 +136,7 @@ public class managerController implements Initializable{
            });
            
            mmRentCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
-               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {   
                    return new SimpleStringProperty(param.getValue().get(7).toString());                        
                }                    
            });
