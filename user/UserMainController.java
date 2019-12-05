@@ -8,11 +8,13 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import home.MyInfo;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -42,8 +44,9 @@ public class UserMainController implements Initializable {
 	@FXML TableColumn limitCol;
 	@FXML TableColumn priceCol;
 	@FXML TableColumn likeCol;
-	
-	ObservableList itemList = database.DBItems.loadItems();
+
+	ObservableList<ObservableList> itemList = FXCollections.observableArrayList();
+
 	@FXML Button umbtn1;
 	@FXML Button umbtn2;
 	@FXML Button umbtn3;
@@ -117,6 +120,34 @@ public class UserMainController implements Initializable {
         } catch (IOException e1) {
            e1.printStackTrace();
         }
+
+		String myList = null;
+		String[] temp = null;
+        try {
+           String m = "loadItemList:"+MyInfo.my_id;
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+           myList = br.readLine();
+           temp = myList.split("//");
+           
+           if(Arrays.deepToString(temp).equals("[]")) {
+
+        	   itemListTable.setItems(null);
+        	   return;
+           }
+           for(int i = 0; i < temp.length; i++) {
+        	   ObservableList<String> row = FXCollections.observableArrayList();
+        	  
+        	   String[] temp2 = temp[i].split("@@");
+        	   		for(int j = 0; j<temp2.length; j++) {
+        	   			row.add(temp2[j]);
+        	   }
+        	   	itemList.add(row);
+           }
 		
 		itemListTable.setItems(itemList);
 		
@@ -149,6 +180,10 @@ public class UserMainController implements Initializable {
                 return new SimpleStringProperty(param.getValue().get(6).toString());                        
             }
         });
+		
+    	} catch (IOException e1) {
+            e1.printStackTrace();
+         }
 		
 		
 		itemListTable.setOnMousePressed(new EventHandler<MouseEvent>() {
