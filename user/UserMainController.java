@@ -61,7 +61,6 @@ public class UserMainController implements Initializable {
 	@FXML Label numTotal;
 	
 	Socket socket;
-	@FXML Button umNoticeBtn;
 
 	@FXML public void moveMyPage() throws Exception {
 		Stage primaryStage = new Stage();
