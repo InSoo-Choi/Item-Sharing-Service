@@ -21,6 +21,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -29,6 +30,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableColumn;
 
@@ -107,6 +109,36 @@ public class ThingsController implements Initializable {
 			primaryStage.setScene(sc);
 	        primaryStage.show();
 			stage.close();
+	}
+	
+	@FXML public void EraseBtn() {
+		socket = MyInfo.socket;
+		String[] rowData = myThingsList.getSelectionModel().getSelectedItem().toString().split(",");
+		try {
+	           String m = "deleteData:"+rowData[0].substring(1);
+	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+	           
+	           pw.println(m);
+	           pw.flush();
+	           
+	           Alert eraseSuccess = new Alert(AlertType.INFORMATION);
+	           eraseSuccess.setHeaderText("Confirmation");
+	           eraseSuccess.setContentText("Erase Success!");
+	           eraseSuccess.showAndWait();
+	           
+	           Stage primaryStage = new Stage();
+	   			Stage stage = (Stage)mtEraseBtn.getScene().getWindow();
+	   			Parent ob = FXMLLoader.load(getClass().getResource("templates/myThings.fxml"));
+	   			ob.getStylesheets().add(getClass().getResource("statics/myThings.css").toExternalForm());
+	   			Scene sc = new Scene(ob);
+	   			primaryStage.setScene(sc);
+	   	        primaryStage.show();
+	   			stage.close();
+	           
+		} catch (IOException e1) {
+	        e1.printStackTrace();
+	     }
+		
 	}
 
 	@SuppressWarnings("unchecked")

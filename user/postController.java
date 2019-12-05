@@ -93,17 +93,37 @@ public class postController implements Initializable {
 	}
 	
 	@FXML public void rent_button(ActionEvent event) throws Exception {
+		socket = MyInfo.socket;
 		
+		String rentSt = null;
+		 try {
+	           String m = "rentSt:" + MyInfo.onePostNum;
+	           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+	           
+	           pw.println(m);
+	           pw.flush();
+	           
+	          rentSt = br.readLine();
+	          
+	          
+	        } catch (IOException e1) {
+	           e1.printStackTrace();
+	        }
+
 		if(idOutput.getText().equals(MyInfo.my_id)) {
 			Alert sameID = new Alert(AlertType.ERROR);
 			sameID.setHeaderText("삐빅");
 			sameID.setContentText("본인의 물건은 대여할 수 없습니다!");
 			sameID.showAndWait();
 		}
-		
+		else if(rentSt.equals("1")) {
+			Alert sameID = new Alert(AlertType.ERROR);
+			sameID.setHeaderText("삐빅");
+			sameID.setContentText("이미 대여된 물건입니다.");
+			sameID.showAndWait();
+		}
 		else {
-		socket = MyInfo.socket;
-	
         try {
            String m = "rent:" + MyInfo.onePostNum+":"+MyInfo.my_id;
            PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
