@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="manager.managerController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="manager.managerController">
    <children>
       <AnchorPane fx:id="mmBackColor" layoutY="35.0" prefHeight="176.0" prefWidth="440.0" />
       <VBox prefHeight="660.0" prefWidth="440.0">
@@ -45,12 +45,12 @@
                <children>
                   <HBox fx:id="mmBtnColor" layoutY="55.0" prefHeight="26.0" prefWidth="440.0">
                      <children>
-                        <Button fx:id="mmbtn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="전체" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="mmbtn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기내용품" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="mmbtn3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="캐리어" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="mmbtn4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="카메라장비" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="mmbtn5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="생필품" HBox.hgrow="ALWAYS" />
-                        <Button fx:id="mmbtn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="기타" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmbtn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mmbtn1" text="전체" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmbtn2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mmbtn2" text="기내용품" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmbtn3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mmbtn3" text="캐리어" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmbtn4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mmbtn4" text="카메라장비" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmbtn5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mmbtn5" text="생필품" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="mmbtn6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mmbtn6" text="기타" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox layoutX="18.0" layoutY="173.0" prefHeight="20.0" prefWidth="193.0">

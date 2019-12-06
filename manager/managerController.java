@@ -37,10 +37,8 @@ import javafx.scene.control.TableColumn.CellDataFeatures;
 
 public class managerController implements Initializable{
 	
-	ObservableList<ObservableList> mylist = FXCollections.observableArrayList();
 	
 	Socket socket;
-	@FXML TableColumn nCol;
 	@FXML Button mmNoticeBtn;
 	@FXML AnchorPane mmBackColor;
 	@FXML HBox mmtopHbox;
@@ -54,13 +52,16 @@ public class managerController implements Initializable{
 	@FXML Label mmTotalLabel;
 	@FXML Label mmNumTotal;
 	@FXML TableView<ObservableList> mmItemListTable;
+	@FXML TableColumn nCol;
 	@FXML TableColumn mmNameCol;
 	@FXML TableColumn mmIdCol;
 	@FXML TableColumn mmPriceCol;
+	@FXML TableColumn mmRentCol;
 	@FXML Button mmEraseBtn;
 	@FXML Label managerTitle;
-	@FXML TableColumn mmRentCol;
 	@FXML HBox mmBtnColor;
+	ObservableList<ObservableList> mylist = FXCollections.observableArrayList();
+	
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -197,6 +198,107 @@ public class managerController implements Initializable{
         }
 	}
 	
+	@FXML public void mmbtn1() {
+		CategorySort("-1");
+	}
+	
+	
+	@FXML public void mmbtn2() {
+		CategorySort("기내용품");
+	}
+	@FXML public void mmbtn3() {
+		CategorySort("캐리어");
+	}
+	@FXML public void mmbtn4() {
+		CategorySort("카메라장비");
+	}
+	@FXML public void mmbtn5() {
+		CategorySort("생필품");
+	}
+	@FXML public void mmbtn6() {
+		CategorySort("기타");
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public void CategorySort(String cat) {
+		mylist.clear();
+		socket = MyInfo.socket;
+
+		String myList = null;
+		String[] temp = null;
+        try {
+           String m = "loadCat:"+cat;
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+           myList = br.readLine();
+           temp = myList.split("//");
+           
+           if(Arrays.deepToString(temp).equals("[]")) {
+
+        	   mmItemListTable.setItems(null);
+        	   return;
+           }
+           for(int i = 0; i < temp.length; i++) {
+        	   ObservableList<String> row = FXCollections.observableArrayList();
+        	  
+        	   String[] temp2 = temp[i].split("@@");
+        	   		for(int j = 0; j<temp2.length; j++) {
+        	   			if(j==7) {
+        	   				if(temp2[j].toString().equals("0")) 
+        	   					row.add("가능");
+        	   				else 
+        	   					row.add("불가능");
+        	   				
+        	   			}else
+        	   				row.add(temp2[j]);
+        	   }
+        	   		mylist.add(row);
+           }
+		
+           mmItemListTable.setItems(mylist);
+           
+           nCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(0).toString());                        
+               }                    
+           });
+           
+           mmNameCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(1).toString());                        
+               }                    
+           });
+   			
+           mmIdCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(3).toString());                        
+               }                    
+           });
+           
+           mmRentCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {   
+                   return new SimpleStringProperty(param.getValue().get(7).toString());                        
+               }                    
+           });
+           
+           mmPriceCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                   return new SimpleStringProperty(param.getValue().get(5).toString());                        
+               }                    
+           });		
+           
+		
+    	} catch (IOException e1) {
+            e1.printStackTrace();
+         }
+		
+		
+	}
 	
 
 }
