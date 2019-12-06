@@ -145,8 +145,15 @@ public class UserMainController implements Initializable {
         	   ObservableList<String> row = FXCollections.observableArrayList();
         	  
         	   String[] temp2 = temp[i].split("@@");
-        	   		for(int j = 0; j<temp2.length; j++) {
-        	   			row.add(temp2[j]);
+        	   for(int j = 0; j<temp2.length; j++) {
+   	   			if(j==7) {
+   	   				if(temp2[j].toString().equals("0")) 
+   	   					row.add("가능");
+   	   				else 
+   	   					row.add("불가능");
+   	   				
+   	   			}else
+   	   				row.add(temp2[j]);
         	   }
         	   	itemList.add(row);
            }
@@ -183,11 +190,6 @@ public class UserMainController implements Initializable {
             }
         });
 		
-		likeCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
-            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                return new SimpleStringProperty(param.getValue().get(6).toString());                        
-            }
-        });
 		
     	} catch (IOException e1) {
             e1.printStackTrace();
@@ -274,7 +276,14 @@ public class UserMainController implements Initializable {
         	  
         	   String[] temp2 = temp[i].split("@@");
         	   		for(int j = 0; j<temp2.length; j++) {
-        	   			row.add(temp2[j]);
+        	   			if(j==7) {
+        	   				if(temp2[j].toString().equals("0")) 
+        	   					row.add("가능");
+        	   				else 
+        	   					row.add("불가능");
+        	   				
+        	   			}else
+        	   				row.add(temp2[j]);
         	   }
         	   	itemList.add(row);
            }
