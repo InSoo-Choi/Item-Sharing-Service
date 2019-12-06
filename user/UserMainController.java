@@ -221,7 +221,122 @@ public class UserMainController implements Initializable {
 		primaryStage.setScene(sc);
         primaryStage.show();
 		stage.close();
+		
 	}
+	
+	@FXML public void umbtn1() {
+		CategorySort("-1");
+	}
+	
+	
+	@FXML public void umbtn2() {
+		CategorySort("기내용품");
+	}
+	@FXML public void umbtn3() {
+		CategorySort("캐리어");
+	}
+	@FXML public void umbtn4() {
+		CategorySort("카메라장비");
+	}
+	@FXML public void umbtn5() {
+		CategorySort("생필품");
+	}
+	@FXML public void umbtn6() {
+		CategorySort("기타");
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public void CategorySort(String cat) {
+		itemList.clear();
+		socket = MyInfo.socket;
 
+		String myList = null;
+		String[] temp = null;
+        try {
+           String m = "loadCat:"+cat;
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           
+           myList = br.readLine();
+           temp = myList.split("//");
+           
+           if(Arrays.deepToString(temp).equals("[]")) {
+
+        	   itemListTable.setItems(null);
+        	   return;
+           }
+           for(int i = 0; i < temp.length; i++) {
+        	   ObservableList<String> row = FXCollections.observableArrayList();
+        	  
+        	   String[] temp2 = temp[i].split("@@");
+        	   		for(int j = 0; j<temp2.length; j++) {
+        	   			row.add(temp2[j]);
+        	   }
+        	   	itemList.add(row);
+           }
+		
+		itemListTable.setItems(itemList);
+		
+		nameCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(1).toString());                        
+            }                    
+        });
+		
+		idCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(3).toString());                        
+            }                    
+        });
+		
+		rentCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(7).toString());                        
+            }
+        });
+		
+		limitCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(4).toString());                        
+            }
+        });
+		
+		priceCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(5).toString());                        
+            }
+        });
+		
+		likeCol.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+            public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                return new SimpleStringProperty(param.getValue().get(6).toString());                        
+            }
+        });
+		
+    	} catch (IOException e1) {
+            e1.printStackTrace();
+         }
+		
+		
+		itemListTable.setOnMousePressed(new EventHandler<MouseEvent>() {
+		    @Override 
+		    public void handle	(MouseEvent event) {
+		        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+		            try {
+		            	String[] rowData = itemListTable.getSelectionModel().getSelectedItem().toString().split(",");
+		            	MyInfo.setOnePostNum(rowData[0].substring(1));
+		            	
+						moveShowOne();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+		        }
+		    }
+		});
+	}
 
 }
