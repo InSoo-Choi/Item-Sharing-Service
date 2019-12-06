@@ -73,7 +73,7 @@
             <Line fx:id="likeLine2" endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />
             <AnchorPane prefHeight="481.0" prefWidth="442.0">
                <children>
-                  <TableView layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
+                  <TableView fx:id="likeTableView" layoutY="14.0" prefHeight="390.0" prefWidth="442.0">
                      <columns>
                         <TableColumn prefWidth="54.40002363920212" text="물품종류" />
                         <TableColumn prefWidth="135.19995498657227" text="제목" />

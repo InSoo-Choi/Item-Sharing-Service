@@ -61,6 +61,9 @@ Button {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
+#myThingsList {
+	-fx-fixed-cell-size: 6;
+}
 .table-view {
 	-fx-background-color: transparent;
 }

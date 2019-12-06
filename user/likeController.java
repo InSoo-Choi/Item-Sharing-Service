@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import javafx.scene.control.TableView;
 
 public class likeController {
 
@@ -30,6 +31,7 @@ public class likeController {
 	@FXML Line likeLine2;
 	@FXML Button likeEraseBtn;
 	@FXML Button likeNoticeBtn;
+	@FXML TableView likeTableView;
 
 	@FXML public void likemoveMyPage() throws Exception{
 		Stage primaryStage = new Stage();
