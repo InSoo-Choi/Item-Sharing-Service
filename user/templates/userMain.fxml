@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserMainController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserMainController">
    <children>
       <AnchorPane fx:id="umBackColor" layoutY="35.0" prefHeight="176.0" prefWidth="440.0" />
       <VBox prefHeight="660.0" prefWidth="440.0">
@@ -77,11 +77,10 @@
             <TableView fx:id="itemListTable" prefHeight="430.0" prefWidth="440.0">
               <columns>
                 <TableColumn fx:id="nameCol" prefWidth="118.4000244140625" text="제목" />
-                <TableColumn fx:id="idCol" prefWidth="70.4000244140625" text="작성자" />
-                  <TableColumn fx:id="rentCol" prefWidth="36.0" text="대여" />
-                  <TableColumn fx:id="limitCol" prefWidth="111.99993896484375" text="최대대여가능일" />
-                  <TableColumn fx:id="priceCol" prefWidth="72.00006103515625" text="하루가격" />
-                  <TableColumn fx:id="likeCol" prefWidth="32.0" text="♥" />
+                <TableColumn fx:id="idCol" prefWidth="90.4000244140625" text="작성자" />
+                  <TableColumn fx:id="rentCol" prefWidth="58.39996337890625" text="대여" />
+                  <TableColumn fx:id="limitCol" prefWidth="103.20001220703125" text="마감일" />
+                  <TableColumn fx:id="priceCol" prefWidth="68.0" text="하루가격" />
               </columns>
             </TableView>
          </children>
