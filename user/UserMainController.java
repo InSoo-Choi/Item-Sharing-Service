@@ -146,7 +146,7 @@ public class UserMainController implements Initializable {
         	  
         	   String[] temp2 = temp[i].split("@@");
         	   for(int j = 0; j<temp2.length; j++) {
-   	   			if(j==7) {
+   	   			if(j==6) {
    	   				if(temp2[j].toString().equals("0")) 
    	   					row.add("가능");
    	   				else 
@@ -276,7 +276,7 @@ public class UserMainController implements Initializable {
         	  
         	   String[] temp2 = temp[i].split("@@");
         	   		for(int j = 0; j<temp2.length; j++) {
-        	   			if(j==7) {
+        	   			if(j==6) {
         	   				if(temp2[j].toString().equals("0")) 
         	   					row.add("가능");
         	   				else 
