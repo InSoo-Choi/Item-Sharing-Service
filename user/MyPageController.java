@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import home.MyInfo;
@@ -106,7 +107,23 @@ public class MyPageController implements Initializable {
         } catch (IOException e1) {
            e1.printStackTrace();
         }
-        
+		
+        try {
+           String m = "loadNoti:" + my_id;
+           
+           BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+           
+           pw.println(m);
+           pw.flush();
+           String[] rs = br.readLine().split("@@");
+           for(int i = 0; i< rs.length; i++) {
+        	   notificationList.add(rs[i]);
+           }
+          
+        } catch (IOException e1) {
+           e1.printStackTrace();
+        }
         
         mpNotiView.setItems(notificationList);
 		
