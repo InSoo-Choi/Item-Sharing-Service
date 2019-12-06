@@ -1,9 +1,0 @@
-diff a/user/addItemController.java b/user/addItemController.java	(rejected hunks)
-@@ -59,6 +59,7 @@
- 	@FXML HBox aiTopHbox;
- 	@FXML Button aiMoveUserHomeBtn;
- 	@FXML Button aiPostSubmitBtn;
-+	@FXML Button aiNoticeBtn;
- 	
- 	@Override
- 	public void initialize(URL location, ResourceBundle resources) {
