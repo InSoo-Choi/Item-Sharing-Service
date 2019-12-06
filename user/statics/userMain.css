@@ -41,9 +41,6 @@ Label {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#itemListTable {
-	-fx-fixed-cell-size: 5;
-}
 .table-view {
 	-fx-background-color: transparent;
 }

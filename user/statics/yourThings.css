@@ -26,9 +26,6 @@ Button {
 	-fx-font-weight: bold;
 	-fx-font-family: "나눔바른펜";
 }
-#ytItemListTable {
-	-fx-fixed-cell-size: 5;
-}
 #ytNotiveBtn {
 	-fx-background-color: transparent;
 }
