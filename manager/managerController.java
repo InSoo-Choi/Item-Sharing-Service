@@ -107,13 +107,19 @@ public class managerController implements Initializable{
            
            for(int i = 0; i < temp.length; i++) {
         	   ObservableList<String> row = FXCollections.observableArrayList();
-        	  
         	   String[] temp2 = temp[i].split("@@");
         	   		for(int j = 0; j<temp2.length; j++) {
-        	   			row.add(temp2[j]);
-        	   }
+        	   			if(j==7) {
+        	   				if(temp2[j].toString().equals("0")) 
+        	   					row.add("가능");
+        	   				else 
+        	   					row.add("불가능");
+        	   				
+        	   			}else
+        	   				row.add(temp2[j]);
+        	   		}
         	   	mylist.add(row);
-           }
+           	}
            
            mmItemListTable.setItems(mylist);
            

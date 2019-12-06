@@ -169,6 +169,12 @@ public class ThingsController implements Initializable {
         	  
         	   String[] temp2 = temp[i].split("@@");
         	   		for(int j = 0; j<temp2.length; j++) {
+        	   			if(j==3) {
+        	   				if(temp2[j].equals("0"))
+        	   					row.add("가능");
+        	   				else
+        	   					row.add("불가능");
+        	   			}
         	   			row.add(temp2[j]);
         	   }
         	   	mylist.add(row);
