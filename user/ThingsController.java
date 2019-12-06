@@ -164,10 +164,10 @@ public class ThingsController implements Initializable {
         	   String[] temp2 = temp[i].split("@@");
         	   		for(int j = 0; j<temp2.length; j++) {
         	   			if(j==3) {
-        	   				if(temp2[j].equals("0"))
+        	   				if(temp2[j].equals("null"))
         	   					row.add("없음");
         	   				else
-        	   					row.add("대여중");
+        	   					row.add(temp2[j]);
         	   			}
         	   			else {
         	   			row.add(temp2[j]);
