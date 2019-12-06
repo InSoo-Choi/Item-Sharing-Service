@@ -51,12 +51,6 @@ public class ThingsController implements Initializable {
 	@FXML Line mtLine1;
 	@FXML Label mtMythingLabel;
 	@FXML Line mtLine2;
-	@FXML TableColumn categoryCol;
-	@FXML TableColumn titleCol;
-	@FXML TableColumn rentCol;
-	@FXML TableColumn maxCol;
-	@FXML TableColumn moneyCol;
-	@FXML TableColumn likeCol;
 	@FXML Label mtMythingsLabel;
 	@FXML Button mtMoveMypageBtn;
 	@FXML Button mtEraseBtn;
@@ -171,11 +165,13 @@ public class ThingsController implements Initializable {
         	   		for(int j = 0; j<temp2.length; j++) {
         	   			if(j==3) {
         	   				if(temp2[j].equals("0"))
-        	   					row.add("가능");
+        	   					row.add("없음");
         	   				else
-        	   					row.add("불가능");
+        	   					row.add("대여중");
         	   			}
+        	   			else {
         	   			row.add(temp2[j]);
+        	   			}
         	   }
         	   	mylist.add(row);
            }
@@ -215,12 +211,6 @@ public class ThingsController implements Initializable {
            my_price.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(5).toString());                        
-               }                    
-           });
-
-           my_like.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
-               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(6).toString());                        
                }                    
            });
    		

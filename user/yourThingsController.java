@@ -64,7 +64,6 @@ public class yourThingsController implements Initializable{
 	@FXML TableColumn your_name;
 	@FXML TableColumn your_max;
 	@FXML TableColumn your_price;
-	@FXML TableColumn your_like;
 	@FXML TableColumn your_id;
 
 	
@@ -131,12 +130,6 @@ public class yourThingsController implements Initializable{
            your_price.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
                    return new SimpleStringProperty(param.getValue().get(4).toString());                        
-               }                    
-           });	
-           
-           your_like.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
-               public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
-                   return new SimpleStringProperty(param.getValue().get(5).toString());                        
                }                    
            });	
            
