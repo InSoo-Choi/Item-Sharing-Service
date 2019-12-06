@@ -125,7 +125,7 @@ public class postController implements Initializable {
 		}
 		else {
         try {
-           String m = "rent:" + MyInfo.onePostNum+":"+MyInfo.my_id;
+           String m = "rent:" + MyInfo.onePostNum+":"+MyInfo.my_id+":"+idOutput.getText();
            PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
            pw.println(m);
            pw.flush();

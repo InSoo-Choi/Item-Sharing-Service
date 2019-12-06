@@ -11,6 +11,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
 
 import home.MyInfo;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -60,6 +62,8 @@ public class MyPageController implements Initializable {
 	@FXML Button mpYourthingsBtn;
 	@FXML Button mpNoticeBtn;
 	
+	ObservableList<String> notificationList = FXCollections.observableArrayList();
+	
 	void init() {
 		Socket socket = MyInfo.socket;
 		
@@ -102,6 +106,9 @@ public class MyPageController implements Initializable {
         } catch (IOException e1) {
            e1.printStackTrace();
         }
+        
+        
+        mpNotiView.setItems(notificationList);
 		
 	}
 
