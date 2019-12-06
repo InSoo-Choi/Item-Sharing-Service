@@ -43,9 +43,6 @@ Button {
 #mmNoticeBtn {
 	-fx-background-color: transparent;
 }
-#mmItemListTable {
-	-fx-fixed-cell-size: 5;
-}
 .table-view {
 	-fx-background-color: transparent;
 }
