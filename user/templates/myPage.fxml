@@ -64,7 +64,7 @@
                      </image>
                   </ImageView>
                   <Label layoutX="52.0" layoutY="18.0" text="이용 관련 수칙이 궁금하시면 클릭해주세요" />
-                  <Button fx:id="mpNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="mpNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#mpLink" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
             <Line fx:id="mpLine1" endX="346.492919921875" endY="0.5575693249702454" startX="-100.0" />

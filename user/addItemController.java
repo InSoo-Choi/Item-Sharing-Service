@@ -1,11 +1,14 @@
 package user;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
@@ -30,6 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -124,5 +128,15 @@ public class addItemController implements Initializable {
 			primaryStage.setScene(sc);
 	        primaryStage.show();
 			stage.close();
+	}
+
+	@FXML public void aiLink() {
+		Hyperlink myHyperlink = new Hyperlink();
+		myHyperlink.setText("test");
+		try {
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+		} catch (IOException | URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 }

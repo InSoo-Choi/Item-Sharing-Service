@@ -1,12 +1,15 @@
 package user;
 
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
@@ -20,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
@@ -178,6 +182,16 @@ public class postController implements Initializable {
         }
 		
 		
+	}
+
+	@FXML public void sopLink() {
+		Hyperlink myHyperlink = new Hyperlink();
+		myHyperlink.setText("test");
+		try {
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+		} catch (IOException | URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
