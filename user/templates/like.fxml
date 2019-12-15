@@ -65,7 +65,7 @@
                      </image>
                   </ImageView>
                   <Label layoutX="52.0" layoutY="18.0" text="이용 관련 수칙이 궁금하시면 클릭해주세요" />
-                  <Button fx:id="likeNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="likeNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#likeLink" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
             <Line fx:id="likeLine1" endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />

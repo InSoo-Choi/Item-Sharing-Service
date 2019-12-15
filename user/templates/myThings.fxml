@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.ThingsController">
+<AnchorPane prefHeight="660.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.ThingsController">
    <children>
       <VBox prefHeight="660.0" prefWidth="442.0">
          <children>
@@ -65,7 +65,7 @@
                      </image>
                   </ImageView>
                   <Label layoutX="52.0" layoutY="18.0" text="이용 관련 수칙이 궁금하시면 클릭해주세요" />
-                  <Button fx:id="mtNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="mtNoticeBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#mtLink" prefHeight="22.0" prefWidth="274.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
             <Line fx:id="mtLine1" endX="339.29290771484375" endY="0.6858017444610596" startX="-100.0" />

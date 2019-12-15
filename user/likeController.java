@@ -1,10 +1,16 @@
 package user;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -55,6 +61,16 @@ public class likeController {
 			primaryStage.setScene(sc);
 	        primaryStage.show();
 			stage.close();
+	}
+
+	@FXML public void likeLink() {
+		Hyperlink myHyperlink = new Hyperlink();
+		myHyperlink.setText("test");
+		try {
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+		} catch (IOException | URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

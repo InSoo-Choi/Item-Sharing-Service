@@ -1,11 +1,14 @@
 package user;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -27,6 +30,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -208,5 +212,14 @@ public class yourThingsController implements Initializable{
 	        e1.printStackTrace();
 	     }
 }
+	@FXML public void ytLink() {
+		Hyperlink myHyperlink = new Hyperlink();
+		myHyperlink.setText("test");
+		try {
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+		} catch (IOException | URISyntaxException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
