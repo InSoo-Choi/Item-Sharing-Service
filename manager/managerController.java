@@ -164,7 +164,7 @@ public class managerController implements Initializable{
 	@FXML public void managerErase() {
 		socket = MyInfo.socket;
 		String[] rowData = mmItemListTable.getSelectionModel().getSelectedItem().toString().split(",");
-		if(rowData[7].substring(1, 2).equals("1")) {
+		if(rowData[6].substring(1, 2).equals("1")) {
      	   Alert eraseSuccess = new Alert(AlertType.ERROR);
 	           eraseSuccess.setHeaderText("Erase Fail");
 	           eraseSuccess.setContentText("Please select things not rented");

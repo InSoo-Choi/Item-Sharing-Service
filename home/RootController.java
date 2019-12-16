@@ -73,7 +73,7 @@ public class RootController implements Initializable {
 		//클라이언트 소켓 생성
 		if(!MyInfo.socketConnect) {
 
-		final String SERVER_IP = "192.168.56.1";
+		final String SERVER_IP = "192.168.0.83";
 
 		final int SERVER_PORT = 8080;
 		
