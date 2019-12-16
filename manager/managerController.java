@@ -189,6 +189,7 @@ public class managerController implements Initializable{
 	   			Scene sc = new Scene(ob);
 	   			primaryStage.setScene(sc);
 	   	        primaryStage.show();
+	   	        primaryStage.setResizable(false);
 	   			stage.close();
 	           
         	} catch (IOException e1) {

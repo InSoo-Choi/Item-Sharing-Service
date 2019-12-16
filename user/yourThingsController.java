@@ -153,6 +153,7 @@ public class yourThingsController implements Initializable{
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
+	        primaryStage.setResizable(false);
 			stage.close();
 	}
 
@@ -167,6 +168,7 @@ public class yourThingsController implements Initializable{
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
+	        primaryStage.setResizable(false);
 			stage.close();
 	}
 	
@@ -179,6 +181,7 @@ public class yourThingsController implements Initializable{
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
+	        primaryStage.setResizable(false);
 			stage.close();
 	}
 	
@@ -206,6 +209,7 @@ public class yourThingsController implements Initializable{
 	   			Scene sc = new Scene(ob);
 	   			primaryStage.setScene(sc);
 	   	        primaryStage.show();
+	   	        primaryStage.setResizable(false);
 	   			stage.close();
 	           
 		} catch (IOException e1) {
@@ -216,7 +220,7 @@ public class yourThingsController implements Initializable{
 		Hyperlink myHyperlink = new Hyperlink();
 		myHyperlink.setText("test");
 		try {
-			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/62"));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}

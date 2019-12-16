@@ -67,7 +67,7 @@ public class likeController {
 		Hyperlink myHyperlink = new Hyperlink();
 		myHyperlink.setText("test");
 		try {
-			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/62"));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}

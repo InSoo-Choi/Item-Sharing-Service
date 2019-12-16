@@ -70,9 +70,10 @@ public class RootController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		//클라이언트 소켓 생성
 		if(!MyInfo.socketConnect) {
 
-		final String SERVER_IP = "192.168.56.1";
+		final String SERVER_IP = "192.168.0.138";
 
 		final int SERVER_PORT = 8080;
 		
@@ -92,6 +93,7 @@ public class RootController implements Initializable {
         
 	}
 	
+	//user login으로 이동
 	@FXML public void moveUser() throws Exception{
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)user.getScene().getWindow();
@@ -104,6 +106,7 @@ public class RootController implements Initializable {
 			 stage.close();
 	}
 	
+	//manager login으로 이동
 	@FXML public void moveManager() throws Exception{
 		Stage primaryStage = new Stage();
 		Stage stage = (Stage)user.getScene().getWindow();
@@ -113,16 +116,18 @@ public class RootController implements Initializable {
 			Scene sc = new Scene(second);
 			primaryStage.setScene(sc);
 	         primaryStage.show();
+	         primaryStage.setResizable(false);
 			 stage.close();
 	}
 	
-	
+	//user login 버튼 이벤트
 	@FXML public void UserLogin(ActionEvent event) throws Exception {
 		
 		socket = MyInfo.socket;
 		
 		MyInfo.setID(inputID.getText());
 		
+		//항목이 비어있는 경우 오류
 		if(inputPW.getText().equals("")) {
 			Alert loginFail = new Alert(AlertType.ERROR);
 			loginFail.setHeaderText("Empty error");
@@ -130,6 +135,7 @@ public class RootController implements Initializable {
 			loginFail.showAndWait();
 		}
 		
+		//text field에 입력받은 id를 서버로 보내고, id에 해당하는 pw를 서버에서 받아온다.
 		String passwordDB = null;
         try {
            String m = "LogIn:" + inputID.getText();
@@ -145,7 +151,7 @@ public class RootController implements Initializable {
         } catch (IOException e1) {
            e1.printStackTrace();
         }
-        
+        //서버에서 받아온 pw를 text filed에 입력된 pw를 비교한다.
 		if(passwordDB.equals(inputPW.getText())) {
 				
 			System.out.println("login success");
@@ -158,6 +164,7 @@ public class RootController implements Initializable {
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();
+		         primaryStage.setResizable(false);
 				 stage.close();
 		}
 		else {
@@ -167,7 +174,7 @@ public class RootController implements Initializable {
 		loginFail.showAndWait();
 		}
 	}
-	
+	//manager login 버튼 이벤트
 	@FXML public void ManagerLogin(ActionEvent event) throws Exception {
 		socket = MyInfo.socket;
 		
@@ -205,6 +212,7 @@ public class RootController implements Initializable {
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();
+		         primaryStage.setResizable(false);
 				 stage.close();
 		}
 		else {
@@ -242,6 +250,7 @@ public class RootController implements Initializable {
 		else {
 		socket = MyInfo.socket;
 		
+		//회원가입 정보 서버로 전송
 		String m = "Register:" + getID.getText()+":"+getPW.getText()+":"+getName.getText()+":"+getPhoneNum.getText();
         PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
      
@@ -261,10 +270,11 @@ public class RootController implements Initializable {
 			Scene sc = new Scene(asd);
 			 primaryStage.setScene(sc);
 	         primaryStage.show();
+	         primaryStage.setResizable(false);
 			 stage.close();
 		}
 	}
-
+	//ID 중복 확인
 	@FXML public void checkExistID(){
 		socket = MyInfo.socket;
 		
@@ -314,6 +324,7 @@ public class RootController implements Initializable {
 			signUp.getStylesheets().add(getClass().getResource("statics/UserSignup.css").toExternalForm());
 			 primaryStage.setScene(new Scene(signUp));
 	         primaryStage.show();
+	         primaryStage.setResizable(false);
 	         
 	         Stage stage = (Stage)UserSignUp.getScene().getWindow();
 	         stage.close();
@@ -326,6 +337,7 @@ public class RootController implements Initializable {
 		signUp.getStylesheets().add(getClass().getResource("statics/first.css").toExternalForm());
 		primaryStage.setScene(new Scene(signUp));
          primaryStage.show();
+         primaryStage.setResizable(false);
          
          Stage stage = (Stage)home.getScene().getWindow();
          stage.close();
@@ -341,6 +353,7 @@ public class RootController implements Initializable {
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
+	        primaryStage.setResizable(false);
 			stage.close();
 	}
 
@@ -354,6 +367,7 @@ public class RootController implements Initializable {
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
+	        primaryStage.setResizable(false);
 			stage.close();
 	}
 
@@ -367,6 +381,7 @@ public class RootController implements Initializable {
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
+	        primaryStage.setResizable(false);
 			stage.close();
 	}
 

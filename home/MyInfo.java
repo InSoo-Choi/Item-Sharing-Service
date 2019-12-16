@@ -2,6 +2,7 @@ package home;
 
 import java.net.Socket;
 
+//사용자의 개인 정보를 저장하는 클래스
 public class MyInfo {
 	
 	public static String my_name;

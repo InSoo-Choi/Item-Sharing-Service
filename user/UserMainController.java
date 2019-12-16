@@ -112,6 +112,7 @@ public class UserMainController implements Initializable {
 		
 		String cnt = null;
         try {
+        	//서버에 저장되어 있는 총 item개수를 불러옵니다.
            String m = "itemsCnt:";
            BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
            PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
@@ -126,7 +127,7 @@ public class UserMainController implements Initializable {
         } catch (IOException e1) {
            e1.printStackTrace();
         }
-
+        
 		String myList = null;
 		String[] temp = null;
         try {
@@ -226,6 +227,7 @@ public class UserMainController implements Initializable {
 		Scene sc = new Scene(ob);
 		primaryStage.setScene(sc);
         primaryStage.show();
+        primaryStage.setResizable(false);
 		stage.close();
 		
 	}
@@ -349,7 +351,7 @@ public class UserMainController implements Initializable {
 		Hyperlink myHyperlink = new Hyperlink();
 		myHyperlink.setText("test");
 		try {
-			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/62"));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}

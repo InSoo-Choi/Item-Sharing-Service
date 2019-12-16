@@ -65,10 +65,12 @@ public class addItemController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		//combo Box 초기화
 		ObservableList<String> kindsList = FXCollections.observableArrayList("기내용품","캐리어", "카메라장비", "생필품", "기타");
 		kinds.setItems(kindsList);
 	}
-
+	
+	//item 등록 버튼 이벤트
 	@FXML public void postSubmit(ActionEvent event) throws Exception {
 		
 		LocalDate localDate = limit_date.getValue();
@@ -90,6 +92,7 @@ public class addItemController implements Initializable {
 			socket = MyInfo.socket;
 			
 	        try {
+	        	//사용자가 작성한 정보 서버로 전송
 	           String m = "addItem:" + name+":"+kind+":"+postByID+":"+content+":"+perDayPrice+":"+date;
 	           PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
 	           
@@ -113,6 +116,7 @@ public class addItemController implements Initializable {
 				Scene sc = new Scene(ob);
 				primaryStage.setScene(sc);
 		        primaryStage.show();
+		        primaryStage.setResizable(false);
 				stage.close();
 		}
 	}
@@ -127,6 +131,7 @@ public class addItemController implements Initializable {
 			Scene sc = new Scene(ob);
 			primaryStage.setScene(sc);
 	        primaryStage.show();
+	        primaryStage.setResizable(false);
 			stage.close();
 	}
 
@@ -134,7 +139,7 @@ public class addItemController implements Initializable {
 		Hyperlink myHyperlink = new Hyperlink();
 		myHyperlink.setText("test");
 		try {
-			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/"));
+			Desktop.getDesktop().browse(new URI("https://enjoyso.tistory.com/62"));
 		} catch (IOException | URISyntaxException e) {
 			e.printStackTrace();
 		}
