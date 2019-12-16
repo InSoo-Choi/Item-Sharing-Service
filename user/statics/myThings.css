@@ -1,6 +1,3 @@
-@font-face{
-   src:url(NanumBarunpenR.ttf);
-}
 #mtTopHbox {
 	-fx-background-color: #6b3cab;
 }
@@ -9,21 +6,18 @@
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #mtMythingsLabel {
 	-fx-text-fill: #8b6ab8;
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #mtBackColor {
 	-fx-background-color: #8b6ab8;
 }
 TestField {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 Line {
 	-fx-stroke: #6b3cab;
@@ -31,11 +25,9 @@ Line {
 }
 Label {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 Button {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #mtNotiveBtn {
 	-fx-background-color: transparent;
@@ -51,7 +43,6 @@ Button {
 	-fx-border-radius: 20px;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #mtEraseBtn {
 	-fx-background-color: #8b6ab8;
@@ -59,7 +50,6 @@ Button {
 	-fx-border-radius: 20px;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 .table-view {
 	-fx-background-color: transparent;
@@ -74,7 +64,6 @@ Button {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
 	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 .table-view .column-header {
 	-fx-background-color: #8b6ab8;
@@ -82,7 +71,6 @@ Button {
 .table-view .table-cell {
 	-fx-text-fill: black;
 	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 .table-row-cell {
 	-fx-background-color: transparent;
@@ -103,7 +91,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mtBtn2 {
 	-fx-background-color: transparent;
@@ -111,7 +98,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mtBtn3 {
 	-fx-background-color: transparent;
@@ -119,7 +105,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mtBtn4 {
 	-fx-background-color: transparent;
@@ -127,7 +112,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mtBtn5 {
 	-fx-background-color: transparent;
@@ -135,7 +119,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #mtBtn6 {
 	-fx-background-color: transparent;
@@ -143,5 +126,4 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
