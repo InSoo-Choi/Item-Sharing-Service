@@ -29,14 +29,7 @@
                      </HBox.margin>
                   </ImageView>
                   <Label fx:id="mtTitle" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="45.0" prefWidth="279.0" text="Item Sharing Service" HBox.hgrow="ALWAYS" />
-                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/cart_icon.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/user_icon.png" />
@@ -103,6 +96,5 @@
       </VBox>
       <Button fx:id="myThingsmoveMypage_Btn" layoutX="406.0" layoutY="3.0" mnemonicParsing="false" onAction="#myThingsmoveMyPage" prefHeight="35.0" prefWidth="30.0" style="-fx-background-color: #00000000;" />
       <Button fx:id="mtMoveUserHome" layoutX="154.0" layoutY="5.0" mnemonicParsing="false" onAction="#myThingsmoveUserHome" prefHeight="35.0" prefWidth="129.0" style="-fx-background-color: #00000000;" textFill="#ffffff00" />
-      <Button layoutX="368.0" layoutY="4.0" mnemonicParsing="false" onAction="#mtMoveLike" prefHeight="35.0" prefWidth="38.0" style="-fx-background-color: #00000000;" />
    </children>
 </AnchorPane>
