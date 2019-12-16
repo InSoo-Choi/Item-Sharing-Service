@@ -1,6 +1,3 @@
-@font-face{
-   src:url(NanumBarunpenR.ttf);
-}
 #mmtopHbox {
 	-fx-background-color: #6b3cab;
 }
@@ -10,18 +7,15 @@
 #managerTitle {
 	-fx-font-weight: bold;
 	-fx-text-fill: white;
-	-fx-font-family: "나눔바른펜";
 }
 #mmBtnColor {
 	-fx-background-color: #8b6ab8;
 }
 #mmTotalLabel {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #mmNumTotal {
 	-fx-text-fill: black;
-	-fx-font-family: "나눔바른펜";
 }
 #mmEraseBtn {
 	-fx-background-color: #8b6ab8;
@@ -30,15 +24,12 @@
   	-fx-border-radius: 20px;
   	-fx-text-fill: white;
   	-fx-font-weight: bold;
-  	-fx-font-family: "나눔바른펜";
 }
 Label {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 Button {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #mmNoticeBtn {
 	-fx-background-color: transparent;
@@ -56,7 +47,6 @@ Button {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
 	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 .table-view .colmmn-header {
 	-fx-background-color: #8b6ab8;
@@ -64,7 +54,6 @@ Button {
 .table-view .table-cell {
 	-fx-text-fill: black;
 	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 .table-row-cell {
 	-fx-background-color: transparent;
@@ -83,7 +72,6 @@ Button {
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
   	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 #mmbtn2 {
 	-fx-background-color: transparent;
@@ -92,7 +80,6 @@ Button {
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
   	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 #mmbtn3 {
 	-fx-background-color: transparent;
@@ -101,7 +88,6 @@ Button {
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
   	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 #mmbtn4 {
 	-fx-background-color: transparent;
@@ -110,7 +96,6 @@ Button {
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
   	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 #mmbtn5 {
 	-fx-background-color: transparent;
@@ -119,7 +104,6 @@ Button {
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
   	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }
 #mmbtn6 {
 	-fx-background-color: transparent;
@@ -128,5 +112,4 @@ Button {
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
   	-fx-font-size: 14px;
-	-fx-font-family: "나눔바른펜";
 }

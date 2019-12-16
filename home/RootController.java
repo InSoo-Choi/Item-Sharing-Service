@@ -73,7 +73,7 @@ public class RootController implements Initializable {
 		//클라이언트 소켓 생성
 		if(!MyInfo.socketConnect) {
 
-		final String SERVER_IP = "192.168.0.138";
+		final String SERVER_IP = "192.168.56.1";
 
 		final int SERVER_PORT = 8080;
 		
@@ -160,7 +160,6 @@ public class RootController implements Initializable {
 			
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/user/templates/userMain.fxml"));
 				UserPage.getStylesheets().add(getClass().getResource("/user/statics/userMain.css").toExternalForm());
-				Font.loadFont(getClass().getResourceAsStream("statics/NanumBarunpenR.ttf"),14);
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();
@@ -208,7 +207,6 @@ public class RootController implements Initializable {
 			Stage stage = (Stage)managerOK.getScene().getWindow();
 				Parent UserPage = FXMLLoader.load(getClass().getResource("/manager/templates/managerMain.fxml"));
 				UserPage.getStylesheets().add(getClass().getResource("/manager/statics/managerMain.css").toExternalForm());
-				Font.loadFont(getClass().getResourceAsStream("statics/NanumBarunpenR.ttf"),14);
 				Scene sc = new Scene(UserPage);
 				 primaryStage.setScene(sc);
 		         primaryStage.show();

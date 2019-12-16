@@ -1,6 +1,3 @@
-@font-face{
-   src:url(NanumBarunpenR.ttf);
-}
 #sopTopHbox {
 	-fx-background-color: #6b3cab;
 }
@@ -9,7 +6,6 @@
 	-fx-alignment: center;
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #sopBackColor {
 	-fx-background-color: #8b6ab8;
@@ -20,11 +16,9 @@ Line {
 }
 Label {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 Button {
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #sopNotiveBtn {
 	-fx-background-color: transparent;
@@ -39,7 +33,6 @@ Button {
 	-fx-border-width: 0px;
 	-fx-text-fill: black;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #sopMoveUserHomeBtn {
 	-fx-background-color: #8b6ab8;
@@ -47,7 +40,6 @@ Button {
 	-fx-border-radius: 20px;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #sopRentBtn {
 	-fx-background-color: #8b6ab8;
@@ -55,7 +47,6 @@ Button {
 	-fx-border-radius: 20px;
 	-fx-text-fill: white;
 	-fx-font-weight: bold;
-	-fx-font-family: "나눔바른펜";
 }
 #sopBtn1 {
 	-fx-background-color: transparent;
@@ -63,7 +54,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #sopBtn2 {
 	-fx-background-color: transparent;
@@ -71,7 +61,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #sopBtn3 {
 	-fx-background-color: transparent;
@@ -79,7 +68,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #sopBtn4 {
 	-fx-background-color: transparent;
@@ -87,7 +75,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #sopBtn5 {
 	-fx-background-color: transparent;
@@ -95,7 +82,6 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
 #sopBtn6 {
 	-fx-background-color: transparent;
@@ -103,5 +89,4 @@ Button {
   	-fx-font-weight: bold;
   	-fx-border-width: 0px;
   	-fx-border-color: transparent;
-  	-fx-font-family: "나눔바른펜";
 }
