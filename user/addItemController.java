@@ -134,7 +134,8 @@ public class addItemController implements Initializable {
 	        primaryStage.setResizable(false);
 			stage.close();
 	}
-
+	
+	//공지사항 하이퍼링크
 	@FXML public void aiLink() {
 		Hyperlink myHyperlink = new Hyperlink();
 		myHyperlink.setText("test");

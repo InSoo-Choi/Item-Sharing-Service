@@ -40,7 +40,6 @@ public class MyPageController implements Initializable {
 	@FXML Label mypage_id;
 	@FXML Label mypage_phone;
 	
-//	static String[] mypage_info = DBMembers.load_myInfo(my_id);
 	@FXML HBox mpTopHbox;
 	@FXML HBox mpBtnColor;
 	@FXML Button mpBtn1;
